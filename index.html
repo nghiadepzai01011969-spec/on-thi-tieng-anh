@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÔN ĐI CHỜ THI - Giải Chi Tiết Đề Cương Tiếng Anh 9 (Trang 1 - 6)</title>
+    <style>
+        :root {
+            --bg-main: #f0fdf4;
+            --bg-card: #ffffff;
+            --primary: #059669;
+            --primary-dark: #065f46;
+            --primary-light: #d1fae5;
+            --accent: #d97706;
+            --accent-bg: #fef3c7;
+            --danger: #dc2626;
+            --danger-bg: #fee2e2;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0f9ff 50%, #fefce8 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Animations nhẹ nhàng, chill, không tốn RAM */
+        @keyframes swayChill {
+            0%, 100% { transform: rotate(-2deg) translateY(0px); }
+            50% { transform: rotate(2deg) translateY(-4px); }
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        @keyframes pulseCircle {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.55); }
+            50% { transform: scale(1.08); box-shadow: 0 0 0 7px rgba(22, 163, 74, 0); }
+        }
+
+        .sway-box {
+            animation: swayChill 4s ease-in-out infinite;
+        }
+
+        .float-box {
+            animation: floatSlow 3.5s ease-in-out infinite;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #065f46 0%, #047857 50%, #0f766e 100%);
+            color: white;
+            padding: 24px 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+            border-bottom: 4px solid #fbbf24;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .header-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 24px;
+        }
+
+        .header-info {
+            flex: 1 1 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            align-self: flex-start;
+            background: rgba(251, 191, 36, 0.25);
+            border: 1px solid #fbbf24;
+            color: #fef08a;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 6px;
+        }
+
+        h1 {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .subtitle {
+            color: #a7f3d0;
+            font-size: 15px;
+            margin-top: 4px;
+        }
+
+        /* Khung LIVE CHILL kéo dài hết khoảng dư & bỏ viền đen bên ngoài */
+        .live-chill-screen {
+            position: relative;
+            flex: 1 1 380px;
+            width: 100%;
+            background: linear-gradient(145deg, #064e3b 0%, #033a2c 100%);
+            border: 2.5px solid #10b981;
+            border-radius: 22px;
+            padding: 20px 28px 16px;
+            text-align: center;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18), inset 0 0 24px rgba(16, 185, 129, 0.16);
+        }
+
+        .live-pill {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #ef4444;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            letter-spacing: 0.4px;
+        }
+
+        .live-dot {
+            width: 7px;
+            height: 7px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .chill-avatar-circle {
+            width: 96px;
+            height: 96px;
+            margin: 8px auto 10px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chill-avatar-svg {
+            width: 74px;
+            height: 74px;
+        }
+
+        .live-chill-caption {
+            color: #a7f3d0;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+
+        /* Nội dung bài tập */
+        main {
+            max-width: 1080px;
+            margin: 22px auto 0;
+            padding: 0 16px;
+        }
+
+        .section-block {
+            background: var(--bg-card);
+            border-radius: 18px;
+            border: 2px solid #e2e8f0;
+            margin-bottom: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+        }
+
+        .section-header {
+            background: #f1f5f9;
+            padding: 14px 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .section-tip {
+            margin-top: 6px;
+            font-size: 13.5px;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+            font-weight: 600;
+        }
+
+        .questions-list {
+            padding: 16px;
+            display: grid;
+            gap: 16px;
+        }
+
+        .q-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 16px;
+            background: #ffffff;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .q-card:hover {
+            border-color: #6ee7b7;
+        }
+
+        .q-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .q-num {
+            background: #0f172a;
+            color: white;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 4px 10px;
+            border-radius: 8px;
+        }
+
+        .q-stem {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        /* Đáp án A B C D và Khoanh đỏ động */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .opt-item {
+            padding: 9px 12px;
+            border-radius: 10px;
+            border: 1.5px solid #cbd5e1;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14.5px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .opt-item.correct {
+            border: 2.5px solid #16a34a;
+            background: #dcfce7;
+            color: #14532d;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(22, 163, 74, 0.15);
+        }
+
+        .opt-letter {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            background: #e2e8f0;
+            color: #334155;
+            flex-shrink: 0;
+        }
+
+        /* Hiệu ứng khoanh xanh lá vào đáp án đúng */
+        .opt-item.correct .opt-letter {
+            background: #16a34a;
+            color: #ffffff;
+            border: 2px solid #15803d;
+            animation: pulseCircle 1.8s infinite;
+        }
+
+        /* 4 ô giải thích chi tiết */
+        .explain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 10px;
+            background: #f8fafc;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .exp-box {
+            font-size: 13.5px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            background: white;
+            border-left: 3.5px solid #059669;
+        }
+
+        .exp-box.sign { border-left-color: #2563eb; }
+        .exp-box.method { border-left-color: #7c3aed; }
+        .exp-box.reason { border-left-color: #16a34a; }
+        .exp-box.trans { border-left-color: #0d9488; }
+
+        .exp-label {
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 2px;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-top">
+            <div class="header-info">
+                <span class="brand-badge">✨ TIẾNG ANH 9 GLOBAL SUCCESS • FULL ĐỀ CƯƠNG GIỮA KỲ 1</span>
+                <h1>🎧 ÔN ĐI CHỜ THI</h1>
+                <p class="subtitle">Giải chi tiết, khoanh xanh đáp án chuẩn • Dấu hiệu nhận biết & Dịch nghĩa từ A - Z</p>
+            </div>
+
+            <!-- Khung LIVE CHILL kéo dài lấp đầy khoảng trống, không còn nền đen bao quanh -->
+            <div class="live-chill-screen sway-box">
+                <span class="live-pill"><span class="live-dot"></span> LIVE CHILL</span>
+                <div class="chill-avatar-circle float-box">
+                    <svg class="chill-avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Mặt tròn vàng ấm -->
+                        <circle cx="50" cy="54" r="32" fill="#fde68a"/>
+                        <!-- Quai tai nghe màu cam vàng -->
+                        <path d="M 16 52 A 34 34 0 0 1 84 52" fill="none" stroke="#f59e0b" stroke-width="6.5" stroke-linecap="round"/>
+                        <!-- Ốp tai nghe 2 bên màu cam -->
+                        <rect x="10" y="42" width="12" height="24" rx="6" fill="#f59e0b"/>
+                        <rect x="78" y="42" width="12" height="24" rx="6" fill="#f59e0b"/>
+                        <!-- Kính râm đen -->
+                        <rect x="27" y="43" width="20" height="12" rx="3.5" fill="#0f172a"/>
+                        <rect x="53" y="43" width="20" height="12" rx="3.5" fill="#0f172a"/>
+                        <line x1="47" y1="48" x2="53" y2="48" stroke="#0f172a" stroke-width="3.5"/>
+                        <!-- Miệng cười nâu ấm -->
+                        <path d="M 38 65 Q 50 74 62 65" fill="none" stroke="#b45309" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="live-chill-caption">Tui Đang Tự Giảng</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main id="mainContent"></main>
+
+<script>
+const PAGES_DATA = [
+    {
+        pageNumber: 1,
+        pageTitle: "TRANG 1 (Tờ in số 1): Phát Âm, Trọng Âm & Đọc Điền Ex 3, Ex 4 (Câu 1-2)",
+        pageSummary: "Chuẩn tờ in số 1: Bắt đầu từ 'REVISION - THE 1st MID TERM TEST' ➔ Ex 1 (Phát âm 1-6) ➔ Ex 2 (Trọng âm 1-6) ➔ Ex 3 (Điền từ 1-7) ➔ Ex 4 (2 câu đầu: environment, collecting).",
+        sections: [
+            {
+                sectionTitle: "EXERCISE 1: Khoanh từ có phần gạch chân phát âm khác (6 câu)",
+                sectionTip: "💡 Dấu hiệu vàng: Nhóm 'ow/ou' đọc là /aʊ/ (như đau!) rất phổ biến: brown, down, cow, downtown, power, crowded, council, mountain. Riêng 'row' và 'slowly' đọc là /əʊ/, còn 'country' đọc là /ʌ/!",
+                questions: [
+                    {
+                        num: "Câu 1",
+                        stem: "Chọn từ có âm gạch chân 'ow' phát âm khác:",
+                        options: [
+                            { letter: "A", text: "r<u>ow</u> (/rəʊ/)" },
+                            { letter: "B", text: "br<u>ow</u>n (/braʊn/)" },
+                            { letter: "C", text: "d<u>ow</u>n (/daʊn/)" },
+                            { letter: "D", text: "c<u>ow</u> (/kaʊ/)" }
+                        ],
+                        correct: "A",
+                        warn: true,
+                        paperStatus: "⚠️ Trên giấy khoanh cả A và C ➔ Chốt đáp án A nha!",
+                        sign: "Các từ kết thúc hoặc đi với -own, -ow chỉ con vật/màu sắc thường đọc /aʊ/, riêng 'row' (hàng/chèo thuyền) đọc /əʊ/.",
+                        method: "Đọc to âm vần: row (/əʊ/) đối lập với brown, down, cow (/aʊ/).",
+                        reason: "Chọn A vì 'row' có 'ow' phát âm là /əʊ/, còn B, C, D đều phát âm là /aʊ/.",
+                        translation: "A. hàng/chèo thuyền | B. màu nâu | C. bên dưới | D. con bò"
+                    },
+                    {
+                        num: "Câu 2",
+                        stem: "Chọn từ có phần gạch chân phát âm khác:",
+                        options: [
+                            { letter: "A", text: "ar<u>ou</u>nd (/əˈraʊnd/)" },
+                            { letter: "B", text: "s<u>ou</u>th (/saʊθ/)" },
+                            { letter: "C", text: "l<u>ou</u>d (/laʊd/)" },
+                            { letter: "D", text: "h<u>ou</u>r (/ˈaʊə(r)/)" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Từ 'hour' có chữ 'h' câm và cụm 'our' tạo thành nguyên âm ba /aʊə(r)/ thay vì nguyên âm đôi /aʊ/ đơn thuần.",
+                        method: "Phân biệt nguyên âm đôi /aʊ/ (around, south, loud) và nguyên âm ba /aʊə/ (hour).",
+                        reason: "Chọn D vì 'hour' phát âm là /ˈaʊə(r)/ (2 âm tiết nhẹ), trong khi A, B, C chỉ có âm /aʊ/.",
+                        translation: "A. xung quanh | B. phía nam | C. to tiếng | D. giờ đồng hồ"
+                    },
+                    {
+                        num: "Câu 3",
+                        stem: "Chọn từ có chữ 'a' gạch chân phát âm khác:",
+                        options: [
+                            { letter: "A", text: "m<u>a</u>tter (/ˈmætə/)" },
+                            { letter: "B", text: "f<u>a</u>ther (/ˈfɑːðə/)" },
+                            { letter: "C", text: "c<u>a</u>mera (/ˈkæmərə/)" },
+                            { letter: "D", text: "pr<u>a</u>ctice (/ˈpræktɪs/)" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Quá chuẩn!",
+                        sign: "Từ 'father' mở rộng khẩu hình đọc chữ 'a' dài /ɑː/, còn lại đọc âm e bẹt /æ/.",
+                        method: "So sánh âm /ɑː/ dài và âm /æ/.",
+                        reason: "Chọn B vì 'father' có chữ 'a' phát âm là /ɑː/, các từ A, C, D phát âm là /æ/.",
+                        translation: "A. vấn đề | B. người cha | C. máy ảnh | D. thực hành"
+                    },
+                    {
+                        num: "Câu 4",
+                        stem: "Chọn từ có cụm 'ear' gạch chân phát âm khác:",
+                        options: [
+                            { letter: "A", text: "b<u>ear</u> (/beə/)" },
+                            { letter: "B", text: "n<u>ear</u> (/nɪə/)" },
+                            { letter: "C", text: "w<u>ear</u> (/weə/)" },
+                            { letter: "D", text: "p<u>ear</u> (/peə/)" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chuẩn luôn!",
+                        sign: "Bộ ba kinh điển 'bear - wear - pear' luôn đi chung đọc là /eə/, chỉ có 'near' (gần) đọc là /ɪə/.",
+                        method: "Mẹo nhớ cụm: 'Con gấu (bear) mặc áo (wear) ăn quả lê (pear)' đều đọc /eə/.",
+                        reason: "Chọn B vì 'near' phát âm là /ɪə/, còn A, C, D phát âm là /eə/.",
+                        translation: "A. con gấu | B. ở gần | C. mặc/đeo | D. quả lê"
+                    },
+                    {
+                        num: "Câu 5",
+                        stem: "Chọn từ có cụm 'ow' gạch chân phát âm khác:",
+                        options: [
+                            { letter: "A", text: "sl<u>ow</u>ly (/ˈsləʊli/)" },
+                            { letter: "B", text: "d<u>ow</u>ntown (/ˌdaʊnˈtaʊn/)" },
+                            { letter: "C", text: "p<u>ow</u>er (/ˈpaʊə/)" },
+                            { letter: "D", text: "cr<u>ow</u>ded (/ˈkraʊdɪd/)" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Đúng bài!",
+                        sign: "'slowly' gốc từ 'slow' đọc âm /əʊ/, còn lại đều đọc âm /aʊ/.",
+                        method: "Nhận diện từ gốc 'slow' (/sləʊ/).",
+                        reason: "Chọn A vì 'slowly' có 'ow' phát âm là /əʊ/, còn B, C, D phát âm là /aʊ/.",
+                        translation: "A. một cách chậm rãi | B. khu trung tâm | C. năng lượng/sức mạnh | D. đông đúc"
+                    },
+                    {
+                        num: "Câu 6",
+                        stem: "Chọn từ có cụm 'ou' gạch chân phát âm khác:",
+                        options: [
+                            { letter: "A", text: "c<u>ou</u>ntry (/ˈkʌntri/)" },
+                            { letter: "B", text: "c<u>ou</u>ncil (/ˈkaʊnsl/)" },
+                            { letter: "C", text: "s<u>ou</u>theast (/ˌsaʊθˈiːst/)" },
+                            { letter: "D", text: "m<u>ou</u>ntain (/ˈmaʊntən/)" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Từ quen thuộc 'country' đọc âm /ʌ/ (như chữ 'ă' ngắn), các từ còn lại đọc /aʊ/.",
+                        method: "Loại trừ: council, southeast, mountain đều đọc /aʊ/.",
+                        reason: "Chọn A vì 'country' phát âm là /ʌ/, còn B, C, D phát âm là /aʊ/.",
+                        translation: "A. đất nước/nông thôn | B. hội đồng | C. hướng đông nam | D. ngọn núi"
+                    }
+                ]
+            },
+            {
+                sectionTitle: "EXERCISE 2: Khoanh từ có vị trí trọng âm khác (6 câu)",
+                sectionTip: "💡 Dấu hiệu nhận biết Trọng âm: Đuôi -tion, -ic nhấn ngay trước nó; đuôi -oon nhấn chính nó; danh từ/tính từ 2 âm tiết thường nhấn âm 1; động từ 2 âm tiết thường nhấn âm 2.",
+                questions: [
+                    {
+                        num: "Câu 1",
+                        stem: "Chọn từ có trọng âm khác với ba từ còn lại:",
+                        options: [
+                            { letter: "A", text: "'suburb (âm 1)" },
+                            { letter: "B", text: "'metro (âm 1)" },
+                            { letter: "C", text: "'tourist (âm 1)" },
+                            { letter: "D", text: "out'doors (âm 2)" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Trạng từ ghép 'outdoors' nhấn âm 2; các danh từ 2 âm tiết suburb, metro, tourist đều nhấn âm 1.",
+                        method: "Quy tắc danh từ 2 âm tiết nhấn âm 1 vs trạng từ ghép nhấn âm 2.",
+                        reason: "Chọn D vì 'outdoors' nhấn âm 2, còn A, B, C nhấn âm 1.",
+                        translation: "A. vùng ngoại ô | B. tàu điện ngầm | C. du khách | D. ở ngoài trời"
+                    },
+                    {
+                        num: "Câu 2",
+                        stem: "Chọn từ có trọng âm khác với ba từ còn lại:",
+                        options: [
+                            { letter: "A", text: ",after'noon (âm 3)" },
+                            { letter: "B", text: "to'morrow (âm 2)" },
+                            { letter: "C", text: "con'sider (âm 2)" },
+                            { letter: "D", text: "pol'lution (âm 2)" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chuẩn luôn!",
+                        sign: "Đuôi '-oon' (afternoon) luôn nhận trọng âm rơi vào chính nó (âm 3).",
+                        method: "Nhận diện hậu tố '-oon' nhấn âm 3 và '-tion' (pollution) nhấn âm 2.",
+                        reason: "Chọn A vì 'afternoon' nhấn âm 3, còn B, C, D đều nhấn âm 2.",
+                        translation: "A. buổi chiều | B. ngày mai | C. cân nhắc | D. sự ô nhiễm"
+                    },
+                    {
+                        num: "Câu 3",
+                        stem: "Chọn từ có trọng âm khác với ba từ còn lại:",
+                        options: [
+                            { letter: "A", text: "ad'ditional (âm 2)" },
+                            { letter: "B", text: "an'xiety (âm 2)" },
+                            { letter: "C", text: "ap'propriate (âm 2)" },
+                            { letter: "D", text: ",opti'mistic (âm 3)" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Có đuôi '-ic' trong 'optimistic' ➔ Trọng âm rơi ngay trước '-ic' là âm '-mis-' (âm 3).",
+                        method: "Quy tắc đuôi '-ic' nhấn âm ngay sát trước nó.",
+                        reason: "Chọn D vì 'optimistic' nhấn âm 3, còn A, B, C nhấn âm 2.",
+                        translation: "A. bổ sung | B. sự lo lắng | C. phù hợp | D. lạc quan"
+                    },
+                    {
+                        num: "Câu 4",
+                        stem: "Chọn từ có trọng âm khác với ba từ còn lại:",
+                        options: [
+                            { letter: "A", text: "ac'tivity (âm 2)" },
+                            { letter: "B", text: "'biogas (âm 1)" },
+                            { letter: "C", text: "ex'citing (âm 2)" },
+                            { letter: "D", text: "con'clusion (âm 2)" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Quá chuẩn!",
+                        sign: "Danh từ ghép 'biogas' nhấn âm đầu tiên (âm 1); đuôi -ity và -sion nhấn trước nó (âm 2).",
+                        method: "Xác định trọng âm qua hậu tố -ity (activity) và -sion (conclusion).",
+                        reason: "Chọn B vì 'biogas' nhấn âm 1, còn A, C, D nhấn âm 2.",
+                        translation: "A. hoạt động | B. khí sinh học | C. thú vị | D. kết luận"
+                    },
+                    {
+                        num: "Câu 5",
+                        stem: "Chọn từ có trọng âm khác với ba từ còn lại:",
+                        options: [
+                            { letter: "A", text: "ac'complish (âm 2)" },
+                            { letter: "B", text: "as'signment (âm 2)" },
+                            { letter: "C", text: "'minimise (âm 1)" },
+                            { letter: "D", text: "dis'traction (âm 2)" }
+                        ],
+                        correct: "C",
+                        warn: true,
+                        paperStatus: "⚠️ Trên giấy khoanh cả A và C ➔ Chốt đáp án C nha!",
+                        sign: "Động từ 3 âm tiết có đuôi '-ise / -ize' (minimise) luôn nhấn cách 1 âm về phía đầu ➔ nhấn âm 1!",
+                        method: "Quy tắc đuôi '-ise' nhấn âm 1; còn accomplish, assignment, distraction đều nhấn âm 2.",
+                        reason: "Chọn C vì 'minimise' nhấn âm 1, trong khi A, B, D đều nhấn âm 2.",
+                        translation: "A. hoàn thành | B. bài tập lớn | C. giảm thiểu | D. sự xao nhãng"
+                    },
+                    {
+                        num: "Câu 6",
+                        stem: "Chọn từ có trọng âm khác với ba từ còn lại:",
+                        options: [
+                            { letter: "A", text: "'mental (âm 1)" },
+                            { letter: "B", text: "de'lay (âm 2)" },
+                            { letter: "C", text: "ad'vise (âm 2)" },
+                            { letter: "D", text: "a'wake (âm 2)" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "'mental' là tính từ 2 âm tiết nhấn âm 1; còn delay, advise (động từ) và awake (tiền tố a-) đều nhấn âm 2.",
+                        method: "Phân loại tính từ đuôi -al nhấn âm 1 với động từ 2 âm tiết nhấn âm 2.",
+                        reason: "Chọn A vì 'mental' nhấn âm 1, còn B, C, D nhấn âm 2.",
+                        translation: "A. thuộc tinh thần | B. trì hoãn | C. khuyên bảo | D. tỉnh thức"
+                    }
+                ]
+            },
+            {
+                sectionTitle: "EXERCISE 3: Đọc đoạn văn Quản Lý Thời Gian & Chọn đáp án (7 câu)",
+                sectionTip: "💡 Học thuộc luôn 5 cụm cố định (Collocations) cực hay ra thi: set goals (đặt mục tiêu), stay on track (đi đúng hướng), social media (mạng xã hội), make progress towards (tiến bộ hướng tới), all aspects of life (mọi khía cạnh cuộc sống).",
+                questions: [
+                    {
+                        num: "Câu 1",
+                        stem: "Firstly, it is important to (1) ___ clear and realistic goals and prioritise tasks accordingly.",
+                        options: [
+                            { letter: "A", text: "achieve" },
+                            { letter: "B", text: "get" },
+                            { letter: "C", text: "reach" },
+                            { letter: "D", text: "set" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Sau chỗ trống là 'clear and realistic goals' ở bước đầu tiên (Firstly).",
+                        method: "Cụm từ cố định (Collocation): set goals = thiết lập/đặt ra mục tiêu.",
+                        reason: "Khi bắt đầu quản lý thời gian, bước đầu tiên là phải 'đặt mục tiêu' (set goals) chứ chưa đạt được ngay.",
+                        translation: "Đầu tiên, điều quan trọng là đặt ra các mục tiêu rõ ràng, thực tế và ưu tiên công việc tương ứng."
+                    },
+                    {
+                        num: "Câu 2",
+                        stem: "This means that you must identify (2) ___ is the most important and urgent...",
+                        options: [
+                            { letter: "A", text: "what" },
+                            { letter: "B", text: "who" },
+                            { letter: "C", text: "when" },
+                            { letter: "D", text: "where" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chuẩn luôn!",
+                        sign: "Sau chỗ trống là động từ 'is the most important' (thiếu chủ ngữ chỉ sự việc).",
+                        method: "Mệnh đề danh từ dùng 'what' làm chủ ngữ (= the thing that: cái gì/điều gì).",
+                        reason: "Chọn A ('what') vì cần xác định 'điều gì' là quan trọng và khẩn cấp nhất.",
+                        translation: "Điều này có nghĩa là bạn phải xác định điều gì là quan trọng và khẩn cấp nhất..."
+                    },
+                    {
+                        num: "Câu 3",
+                        stem: "Next, creating a schedule or to-do list can be helpful in staying (3) ___ track...",
+                        options: [
+                            { letter: "A", text: "up" },
+                            { letter: "B", text: "off" },
+                            { letter: "C", text: "on" },
+                            { letter: "D", text: "in" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "Trước chỗ trống có 'staying' và sau chỗ trống là danh từ 'track'.",
+                        method: "Thành ngữ (Idiom): stay on track = đi đúng hướng, bám sát tiến độ.",
+                        reason: "Giới từ đi kèm với 'track' mang nghĩa tích cực bám sát kế hoạch luôn là 'on'.",
+                        translation: "Tiếp theo, việc lập thời gian biểu hoặc danh sách việc cần làm sẽ giúp bạn đi đúng hướng..."
+                    },
+                    {
+                        num: "Câu 4",
+                        stem: "...say no to distractions and time-wasting activities such as checking social (4) ___.",
+                        options: [
+                            { letter: "A", text: "medium" },
+                            { letter: "B", text: "media" },
+                            { letter: "C", text: "Interaction" },
+                            { letter: "D", text: "contact" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Quá chuẩn!",
+                        sign: "Có tính từ 'social' đứng ngay trước chỗ trống.",
+                        method: "Danh từ ghép quen thuộc: social media = mạng xã hội.",
+                        reason: "Chọn B ('media') để tạo thành cụm 'checking social media' (lướt mạng xã hội).",
+                        translation: "...học cách nói không với những xao nhãng và hoạt động tốn thời gian như lướt mạng xã hội."
+                    },
+                    {
+                        num: "Câu 5",
+                        stem: "...taking regular breaks and scheduling time for self-care activities can help increase (5) ___ and prevent burnout.",
+                        options: [
+                            { letter: "A", text: "product" },
+                            { letter: "B", text: "produce" },
+                            { letter: "C", text: "productivity" },
+                            { letter: "D", text: "productive" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "Sau ngoại động từ 'increase' (làm tăng) và song song với danh từ 'burnout' cần một danh từ chỉ hiệu suất.",
+                        method: "Bài tập Từ loại (Word Form): Cần danh từ không đếm được 'productivity' (năng suất).",
+                        reason: "Chọn C vì 'increase productivity' nghĩa là tăng năng suất làm việc/học tập.",
+                        translation: "...nghỉ giải lao đều đặn và dành thời gian tự chăm sóc bản thân giúp tăng năng suất và ngăn ngừa kiệt sức."
+                    },
+                    {
+                        num: "Câu 6",
+                        stem: "...ensure that you are making progress (6) ___ your goals...",
+                        options: [
+                            { letter: "A", text: "forwards" },
+                            { letter: "B", text: "towards" },
+                            { letter: "C", text: "in" },
+                            { letter: "D", text: "On" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Đúng bài!",
+                        sign: "Cụm 'making progress ___ your goals' (tiến bộ hướng tới mục tiêu).",
+                        method: "Giới từ chỉ phương hướng tới đích: towards (hướng về phía).",
+                        reason: "Chọn B ('towards') vì 'make progress towards + mục tiêu' là cấu trúc chuẩn.",
+                        translation: "...đảm bảo rằng bạn đang có sự tiến bộ hướng tới các mục tiêu của mình..."
+                    },
+                    {
+                        num: "Câu 7",
+                        stem: "...be more productive, and achieve success in all (7) ___ of your life.",
+                        options: [
+                            { letter: "A", text: "aspects" },
+                            { letter: "B", text: "parts" },
+                            { letter: "C", text: "features" },
+                            { letter: "D", text: "Sides" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Cụm 'in all ___ of your life' (trong mọi khía cạnh của cuộc sống).",
+                        method: "Kết hợp từ vựng (Collocation): in all aspects of life.",
+                        reason: "Chọn A ('aspects' = khía cạnh/phương diện) phù hợp nghĩa nhất khi nói về cuộc sống.",
+                        translation: "...năng suất hơn, và đạt được thành công trong mọi khía cạnh của cuộc sống."
+                    }
+                ]
+            },
+            {
+                sectionTitle: "EXERCISE 4 (Câu 1 & 2 ở cuối Trang 1): Đoạn văn Người Thu Gom Rác",
+                sectionTip: "💡 Chú ý: Câu 1-2 nằm ở cuối Trang 1, còn Câu 3-7 nằm ở đầu Trang 2 nhé!",
+                questions: [
+                    {
+                        num: "Câu 1",
+                        stem: "They work to clean up our neighborhoods and pick up waste that could harm our (1) ___.",
+                        options: [
+                            { letter: "A", text: "environment" },
+                            { letter: "B", text: "relationship" },
+                            { letter: "C", text: "production" },
+                            { letter: "D", text: "facility" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Có cụm 'pick up waste that could harm our...' (nhặt rác có thể gây hại cho...).",
+                        method: "Xét ngữ nghĩa của câu: rác thải gây hại trực tiếp cho môi trường (environment).",
+                        reason: "Chọn A ('environment' = môi trường) hoàn toàn khớp ngữ cảnh bảo vệ khu phố.",
+                        translation: "Họ làm việc để dọn sạch khu phố và thu gom rác thải có thể gây hại cho môi trường của chúng ta."
+                    },
+                    {
+                        num: "Câu 2",
+                        stem: "After (2) ___ waste from homes and businesses, they take it to a landfill or recycling center...",
+                        options: [
+                            { letter: "A", text: "collecting" },
+                            { letter: "B", text: "collected" },
+                            { letter: "C", text: "to collect" },
+                            { letter: "D", text: "collect" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chuẩn luôn!",
+                        sign: "Đứng ngay sau giới từ chỉ thời gian 'After' và không có chủ ngữ đi kèm.",
+                        method: "Quy tắc ngữ pháp: Giới từ (After / Before / Without / In...) + V-ing.",
+                        reason: "Chọn A ('collecting') vì sau 'After' khi rút gọn cùng chủ ngữ chủ động ta luôn dùng V-ing.",
+                        translation: "Sau khi thu gom rác từ các hộ gia đình và cơ sở kinh doanh, họ đưa rác tới bãi chôn lấp hoặc trung tâm tái chế..."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        pageNumber: 2,
+        pageTitle: "TRANG 2 (Tờ in số 2): Tiếp Ex 4 (Câu 3-7) & Bài Đọc Về Thành Thị Ex 5 (1-5)",
+        pageSummary: "Chuẩn tờ in số 2: Có số '2' in trên đầu ➔ Tiếp Ex 4 (in, products, reduce, physically, preserving) ➔ Bài đọc bất lợi thành phố (1-5) ➔ Đoạn văn Mary & James ở nửa dưới.",
+        sections: [
+            {
+                sectionTitle: "EXERCISE 4 (Tiếp theo Câu 3 ➔ 7 ở đầu Trang 2)",
+                sectionTip: "💡 Nhớ kỹ: Trạng từ (đuôi -ly) đứng trước tính từ/phân từ (physically demanding work = công việc đòi hỏi thể lực) và sau giới từ 'in' luôn cộng V-ing!",
+                questions: [
+                    {
+                        num: "Câu 3",
+                        stem: "At the landfill, the garbage is buried (3) ___ the ground so that it doesn't smell or attract pests.",
+                        options: [
+                            { letter: "A", text: "on" },
+                            { letter: "B", text: "in" },
+                            { letter: "C", text: "at" },
+                            { letter: "D", text: "of" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chính xác!",
+                        sign: "Động từ 'buried' (chôn lấp) đi với danh từ 'the ground' (lòng đất).",
+                        method: "Cụm giới từ chỉ vị trí: buried in the ground = được chôn trong lòng đất.",
+                        reason: "Chọn B ('in') vì chôn rác là chôn vào bên trong lòng đất để không bốc mùi.",
+                        translation: "Tại bãi rác, rác thải được chôn trong lòng đất để không bốc mùi hoặc thu hút côn trùng gây hại."
+                    },
+                    {
+                        num: "Câu 4",
+                        stem: "At the recycling center, the garbage is processed so that it can be reused to make new (4) ___.",
+                        options: [
+                            { letter: "A", text: "decisions" },
+                            { letter: "B", text: "creations" },
+                            { letter: "C", text: "products" },
+                            { letter: "D", text: "ideas" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chuẩn luôn!",
+                        sign: "Rác được xử lý ở trung tâm tái chế để tái sử dụng tạo ra '...' mới.",
+                        method: "Dựa vào nghĩa từ vựng: make new products = tạo ra các sản phẩm mới.",
+                        reason: "Chọn C ('products' = sản phẩm) hợp nghĩa với quy trình tái chế rác thải.",
+                        translation: "Tại trung tâm tái chế, rác được xử lý để có thể tái sử dụng làm ra các sản phẩm mới."
+                    },
+                    {
+                        num: "Câu 5",
+                        stem: "This helps (5) ___ the amount of waste that goes into landfills and helps preserve natural resources.",
+                        options: [
+                            { letter: "A", text: "raise" },
+                            { letter: "B", text: "remain" },
+                            { letter: "C", text: "increase" },
+                            { letter: "D", text: "reduce" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Tái chế giúp '...' lượng rác thải đổ ra bãi chôn lấp.",
+                        method: "Cụm từ vựng môi trường: reduce the amount of waste = giảm lượng rác thải.",
+                        reason: "Chọn D ('reduce' = làm giảm), trái nghĩa với raise/increase (làm tăng).",
+                        translation: "Điều này giúp giảm lượng rác thải đổ ra các bãi chôn lấp và giúp bảo tồn tài nguyên thiên nhiên."
+                    },
+                    {
+                        num: "Câu 6",
+                        stem: "Without a doubt, being a garbage collector can be (6) ___ demanding work.",
+                        options: [
+                            { letter: "A", text: "physics" },
+                            { letter: "B", text: "physically" },
+                            { letter: "C", text: "physic" },
+                            { letter: "D", text: "physical" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Quá chuẩn!",
+                        sign: "Đứng ngay trước tính từ 'demanding' (đòi hỏi khắt khe/vất vả).",
+                        method: "Ngữ pháp Từ loại: Dùng trạng từ (Adverb: physically) để bổ nghĩa cho tính từ 'demanding'.",
+                        reason: "Chọn B ('physically demanding' = đòi hỏi nhiều về mặt thể lực).",
+                        translation: "Không nghi ngờ gì nữa, làm người thu gom rác có thể là một công việc đòi hỏi rất nhiều thể lực."
+                    },
+                    {
+                        num: "Câu 7",
+                        stem: "Their work plays a crucial role in (7) ___ the natural beauty of the community.",
+                        options: [
+                            { letter: "A", text: "preventing" },
+                            { letter: "B", text: "creating" },
+                            { letter: "C", text: "destroying" },
+                            { letter: "D", text: "preserving" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Sau 'plays a crucial role in...' và tân ngữ là 'the natural beauty of the community'.",
+                        method: "Collocation SGK Unit 1: preserve the natural beauty = gìn giữ/bảo tồn vẻ đẹp tự nhiên.",
+                        reason: "Chọn D ('preserving' = gìn giữ, bảo tồn) mang nghĩa tích cực phù hợp với vai trò của người thu gom rác.",
+                        translation: "Công việc của họ đóng vai trò thiết yếu trong việc gìn giữ vẻ đẹp tự nhiên của cộng đồng."
+                    }
+                ]
+            },
+            {
+                sectionTitle: "EXERCISE 5 (Bài đọc 1 ở giữa Trang 2): Nhược Điểm Của Cuộc Sống Thành Phố (5 câu)",
+                sectionTip: "💡 Mẹo đọc hiểu cực nhanh: Câu 1 hỏi ý chính ➔ đọc câu cuối đoạn 1 ('city life has many drawbacks' = bất lợi). Câu hỏi 'them' ➔ nhìn danh từ số nhiều đứng ngay câu trước!",
+                questions: [
+                    {
+                        num: "Câu 1",
+                        stem: "What is the passage mainly about?",
+                        options: [
+                            { letter: "A", text: "The reasons for moving to the suburbs." },
+                            { letter: "B", text: "The disadvantages of city life." },
+                            { letter: "C", text: "The high cost of living in cities." },
+                            { letter: "D", text: "The causes of pollution in cities." }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chính xác!",
+                        sign: "Đoạn 1 chốt câu chủ đề: 'city life has many drawbacks' (drawbacks = disadvantages = bất lợi).",
+                        method: "Đọc câu chủ đề (Topic sentence) ở cuối đoạn 1 và câu mở đầu đoạn 2, 3.",
+                        reason: "Cả bài liệt kê các bất lợi của thành phố: chi phí cao, ô nhiễm tiếng ồn/không khí, thiếu không gian.",
+                        translation: "Đoạn văn chủ yếu nói về điều gì? ➔ B. Những bất lợi của cuộc sống thành thị."
+                    },
+                    {
+                        num: "Câu 2",
+                        stem: "Why does the author mention 'accommodation, petrol, food, and drinks' in paragraph 2?",
+                        options: [
+                            { letter: "A", text: "To give examples of high living costs." },
+                            { letter: "B", text: "To explain how convenient city life is." },
+                            { letter: "C", text: "To describe what city people often lack." },
+                            { letter: "D", text: "To suggest city people save money." }
+                        ],
+                        correct: "A",
+                        warn: true,
+                        paperStatus: "⚠️ Trên giấy khoanh cả A và C ➔ Chốt đáp án A nha!",
+                        sign: "Câu ngay trước trong đoạn 2 viết: 'The high cost of living is the first disadvantage... Accommodation and petrol are expensive. Food and drinks are also pricey.'",
+                        method: "Đọc câu đứng liền trước các từ khóa để tìm mục đích minh họa của tác giả.",
+                        reason: "Tác giả nêu chỗ ở, xăng xe, đồ ăn thức uống đắt đỏ để làm ví dụ chứng minh cho 'chi phí sinh hoạt cao' (high living costs).",
+                        translation: "Tại sao tác giả nhắc đến 'chỗ ở, xăng, đồ ăn và thức uống' ở đoạn 2? ➔ A. Để đưa ra ví dụ về chi phí sinh hoạt đắt đỏ."
+                    },
+                    {
+                        num: "Câu 3",
+                        stem: "What does the word 'them' in paragraph 2 refer to?",
+                        options: [
+                            { letter: "A", text: "bad effects" },
+                            { letter: "B", text: "stress levels" },
+                            { letter: "C", text: "city people" },
+                            { letter: "D", text: "construction sites" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "Câu chứa từ 'them': 'These are harmful to people's health, such as increasing their stress levels, disturbing their sleep and making them suffer from breathing problems.'",
+                        method: "Quy chiếu đại từ (Pronoun Reference): Ai bị mất ngủ và mắc bệnh hô hấp? Chính là người dân thành phố (city people).",
+                        reason: "Chọn C ('city people') vì chỉ con người mới chịu vấn đề về giấc ngủ và hô hấp.",
+                        translation: "Từ 'them' ở đoạn 2 ám chỉ đối tượng nào? ➔ C. người dân thành phố."
+                    },
+                    {
+                        num: "Câu 4",
+                        stem: "According to the passage, teenagers often hang out at shopping malls because ___.",
+                        options: [
+                            { letter: "A", text: "they find shopping malls interesting" },
+                            { letter: "B", text: "they have few places outdoor to play" },
+                            { letter: "C", text: "they prefer them to entertainment complexes" },
+                            { letter: "D", text: "their houses are too small" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chuẩn luôn!",
+                        sign: "Đoạn 3 viết: 'Many cities lack spaces for outdoor activities; therefore, teenagers often hang out at shopping malls...'",
+                        method: "Dò từ khóa 'teenagers often hang out at shopping malls' và tìm mệnh đề nguyên nhân phía trước 'therefore'.",
+                        reason: "'lack spaces for outdoor activities' đồng nghĩa hoàn toàn với 'have few places outdoor to play'.",
+                        translation: "Theo đoạn văn, thanh thiếu niên thường tụ tập ở trung tâm thương mại vì các em có rất ít không gian ngoài trời để vui chơi."
+                    },
+                    {
+                        num: "Câu 5",
+                        stem: "Which of the following is NOT mentioned about city authorities?",
+                        options: [
+                            { letter: "A", text: "They are trying to find solutions to city problems." },
+                            { letter: "B", text: "They all want to solve problems for all the world's cities." },
+                            { letter: "C", text: "They hope to lower the costs of living in cities." },
+                            { letter: "D", text: "They reduced pollution levels in cities by half last year." }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Đoạn cuối viết chính quyền vẫn còn chặng đường dài phía trước ('still have a long way to go before they can reduce living costs and pollution').",
+                        method: "Tìm chi tiết bịa đặt số liệu không hề có trong bài ('by half last year' - giảm một nửa vào năm ngoái).",
+                        reason: "Chọn D vì trong bài không hề nói năm ngoái đã giảm được một nửa mức độ ô nhiễm.",
+                        translation: "Điều nào sau đây KHÔNG được đề cập về chính quyền thành phố? ➔ D. Họ đã giảm một nửa mức độ ô nhiễm vào năm ngoái."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        pageNumber: 3,
+        pageTitle: "TRANG 3 (Tờ in số 3): 6 Câu Hỏi Mary & James + Ngữ Pháp & Từ Vựng Ex 6 (Câu 1-15)",
+        pageSummary: "Chuẩn tờ in số 3: Có số '3' in trên đầu ➔ 6 câu hỏi bài đọc (Title, Difference...) ➔ Ex 6 câu 1 đến 15 (chia thì, đại từ nghi vấn + to V, Bun Bo Hu Tieu, nón lá Chuông).",
+        sections: [
+            {
+                sectionTitle: "EXERCISE 5 (Bài đọc 2 ở đầu Trang 3): Mary & James Quản Lý Thời Gian (6 câu)",
+                sectionTip: "💡 Đoạn văn của bài này nằm ở nửa dưới Trang 2, còn 6 câu hỏi nằm ở đầu Trang 3 nhé!",
+                questions: [
+                    {
+                        num: "Câu 1",
+                        stem: "Which title best describes the content of the text?",
+                        options: [
+                            { letter: "A", text: "How to Use Social Media Effectively" },
+                            { letter: "B", text: "Tips for Healthy Eating Habits" },
+                            { letter: "C", text: "Strategies for Managing Time Efficiently" },
+                            { letter: "D", text: "Importance of Exercise in Daily Life" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "Cả đoạn 1 (Mary) và đoạn 2 (James) đều nói về cách lập to-do list, ưu tiên việc quan trọng để quản lý thời gian.",
+                        method: "Tổng hợp nội dung cả 2 đoạn văn để tìm tiêu đề bao quát nhất.",
+                        reason: "Chọn C ('Các chiến lược quản lý thời gian hiệu quả') bao quát cả trường hợp của Mary và James.",
+                        translation: "Tiêu đề nào mô tả đúng nhất nội dung văn bản? ➔ C. Các chiến lược quản lý thời gian hiệu quả."
+                    },
+                    {
+                        num: "Câu 2",
+                        stem: "What is the main difference between Mary and James's approach to managing their time?",
+                        options: [
+                            { letter: "A", text: "Mary limits her social media use, while James avoids distractions by turning off notifications." },
+                            { letter: "B", text: "Mary uses a to-do list, while James does not use any planning tools." },
+                            { letter: "C", text: "Mary works overtime frequently, while James has a flexible work schedule." },
+                            { letter: "D", text: "Mary spends a lot of time on social media, while James spends little time with his family." }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chuẩn luôn!",
+                        sign: "Đoạn 1: Mary 'limiting her usage to an hour each day'. Đoạn 2: James 'turns off email and social media notifications'.",
+                        method: "Đối chiếu thông tin giữa Mary và James trong bài đọc.",
+                        reason: "Chọn A vì cả hai đều dùng to-do list (B sai), điểm khác nhau rõ nhất là cách xử lý mạng xã hội và thông báo.",
+                        translation: "Sự khác biệt chính trong cách quản lý thời gian của Mary và James là gì? ➔ A. Mary giới hạn thời gian dùng mạng xã hội, còn James tắt thông báo để tránh xao nhãng."
+                    },
+                    {
+                        num: "Câu 3",
+                        stem: "The word 'it' in paragraph 1 refers to ___.",
+                        options: [
+                            { letter: "A", text: "a social media account" },
+                            { letter: "B", text: "volunteer work" },
+                            { letter: "C", text: "time" },
+                            { letter: "D", text: "deadline" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chính xác!",
+                        sign: "Câu trong bài: 'She also does some volunteer work at a local charity. It provides valuable academic experience and looks great on her CV.'",
+                        method: "Tìm danh từ số ít chính trong câu ngay trước chữ 'It'.",
+                        reason: "Hoạt động mang lại kinh nghiệm quý giá và làm đẹp CV chính là 'volunteer work' (công việc tình nguyện).",
+                        translation: "Từ 'it' trong đoạn 1 dùng để chỉ: B. công việc tình nguyện."
+                    },
+                    {
+                        num: "Câu 4",
+                        stem: "Which word is closest in meaning to 'reminders'?",
+                        options: [
+                            { letter: "A", text: "alerts" },
+                            { letter: "B", text: "warnings" },
+                            { letter: "C", text: "notifications" },
+                            { letter: "D", text: "announcements" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Đúng theo ngữ cảnh app điện thoại!",
+                        sign: "Câu trong bài: 'the app helps her receive reminders to ensure she doesn't forget anything.'",
+                        method: "Xét ngữ cảnh sử dụng ứng dụng (app): 'reminders' (lời nhắc trên ứng dụng) gần nghĩa với 'notifications' (thông báo nhắc việc) hoặc 'alerts' (báo nhắc).",
+                        reason: "Trong ngữ cảnh app quản lý bài tập của học sinh, 'notifications' (thông báo nhắc nhở) rất sát nghĩa.",
+                        translation: "Từ nào gần nghĩa nhất với 'reminders' (lời nhắc)? ➔ C. thông báo nhắc việc."
+                    },
+                    {
+                        num: "Câu 5",
+                        stem: "Why does Mary limit her social media time?",
+                        options: [
+                            { letter: "A", text: "To avoid wasting time and stay focused" },
+                            { letter: "B", text: "To relax and clear her mind" },
+                            { letter: "C", text: "To focus on volunteer work" },
+                            { letter: "D", text: "To spend more time with her family" }
+                        ],
+                        correct: "A",
+                        warn: true,
+                        paperStatus: "⚠️ Trên giấy khoanh cả A và C ➔ Chốt đáp án A nha!",
+                        sign: "Đoạn 1 ghi rõ: 'She's mindful of not spending too much time on online social media, limiting her usage to an hour each day to avoid wasting her time.'",
+                        method: "Dò đúng cụm chỉ mục đích 'to avoid wasting her time' trong đoạn 1.",
+                        reason: "Chọn A vì bài đọc viết trực tiếp là để tránh lãng phí thời gian và giữ sự tập trung.",
+                        translation: "Tại sao Mary giới hạn thời gian dùng mạng xã hội? ➔ A. Để tránh lãng phí thời gian và giữ tập trung."
+                    },
+                    {
+                        num: "Câu 6",
+                        stem: "Which statement is not true based on the text?",
+                        options: [
+                            { letter: "A", text: "James frequently checks social media notifications at work." },
+                            { letter: "B", text: "Mary uses a daily to-do list to stay focused." },
+                            { letter: "C", text: "James turns off notifications to avoid distractions." },
+                            { letter: "D", text: "Mary enjoys volunteering at a local charity." }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Trong bài James tắt thông báo (turns off notifications) khi làm việc, trái ngược hoàn toàn với câu A.",
+                        method: "Tìm câu phát biểu ngược lại hoàn toàn với thông tin trong bài.",
+                        reason: "Chọn A vì James tắt thông báo chứ không hề kiểm tra thông báo mạng xã hội thường xuyên khi làm việc.",
+                        translation: "Phát biểu nào KHÔNG ĐÚNG dựa theo văn bản? ➔ A. James thường xuyên kiểm tra thông báo mạng xã hội khi đang làm việc."
+                    }
+                ]
+            },
+            {
+                sectionTitle: "EXERCISE 6 (Câu 1 ➔ 15 ở Trang 3): Thì Động Từ, Từ Vựng & Cấu Trúc Wh- + to V",
+                sectionTip: "💡 Công thức thần thánh từ câu 11-16: Cứ thấy từ để hỏi (how / where / when / what) đứng trước chỗ trống mà không có chủ ngữ mới ➔ Khoanh ngay 'to + V nguyên mẫu'!",
+                questions: [
+                    {
+                        num: "Câu 1",
+                        stem: "My mother ___ morning exercise every day.",
+                        options: [
+                            { letter: "A", text: "do" },
+                            { letter: "B", text: "does" },
+                            { letter: "C", text: "did" },
+                            { letter: "D", text: "doing" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chính xác!",
+                        sign: "Cuối câu có 'every day' (mỗi ngày) + Chủ ngữ số ít 'My mother'.",
+                        method: "Thì Hiện Tại Đơn với chủ ngữ ngôi thứ 3 số ít: V thêm -s/-es.",
+                        reason: "Chọn B ('does') vì 'My mother' là số ít và 'every day' chỉ thói quen hiện tại.",
+                        translation: "Mẹ tôi tập thể dục buổi sáng mỗi ngày."
+                    },
+                    {
+                        num: "Câu 2",
+                        stem: "My father and his friends ___ football twice a week.",
+                        options: [
+                            { letter: "A", text: "will play" },
+                            { letter: "B", text: "played" },
+                            { letter: "C", text: "play" },
+                            { letter: "D", text: "plays" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chuẩn luôn!",
+                        sign: "Cuối câu có 'twice a week' (2 lần 1 tuần) + Chủ ngữ số nhiều 'My father and his friends'.",
+                        method: "Thì Hiện Tại Đơn với chủ ngữ số nhiều: Động từ giữ nguyên mẫu.",
+                        reason: "Chọn C ('play') vì chủ ngữ có nhiều người.",
+                        translation: "Bố tôi và những người bạn của ông chơi bóng đá hai lần một tuần."
+                    },
+                    {
+                        num: "Câu 3",
+                        stem: "Look! The train ___.",
+                        options: [
+                            { letter: "A", text: "comes" },
+                            { letter: "B", text: "is coming" },
+                            { letter: "C", text: "came" },
+                            { letter: "D", text: "come" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chính xác!",
+                        sign: "Đầu câu có động từ mệnh lệnh kèm dấu chấm than 'Look!' (Nhìn kìa!).",
+                        method: "Thì Hiện Tại Tiếp Diễn: am/is/are + V-ing.",
+                        reason: "Chọn B ('is coming') vì sự việc đang diễn ra ngay trước mắt lúc nói.",
+                        translation: "Nhìn kìa! Đoàn tàu đang tới."
+                    },
+                    {
+                        num: "Câu 4",
+                        stem: "Emily lives and works in Paris but she ___ a holiday in England at the moment.",
+                        options: [
+                            { letter: "A", text: "will have" },
+                            { letter: "B", text: "has" },
+                            { letter: "C", text: "is having" },
+                            { letter: "D", text: "had" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Quá chuẩn!",
+                        sign: "Cuối câu có cụm trạng từ thời gian 'at the moment' (ngay lúc này).",
+                        method: "Thì Hiện Tại Tiếp Diễn diễn tả hành động tạm thời đang diễn ra: is + V-ing.",
+                        reason: "Chọn C ('is having') vì 'have a holiday' là đang đi nghỉ mát (hành động chia tiếp diễn được).",
+                        translation: "Emily sống và làm việc ở Paris nhưng hiện tại cô ấy đang đi nghỉ mát ở Anh."
+                    },
+                    {
+                        num: "Câu 5",
+                        stem: "Ms. Mai usually ___ dinner for her family after work.",
+                        options: [
+                            { letter: "A", text: "cooks" },
+                            { letter: "B", text: "cooked" },
+                            { letter: "C", text: "is cooking" },
+                            { letter: "D", text: "will cook" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Trong câu có trạng từ chỉ tần suất 'usually' (thường xuyên) + Chủ ngữ số ít 'Ms. Mai'.",
+                        method: "Thì Hiện Tại Đơn: Chủ ngữ số ít + V-s/es.",
+                        reason: "Chọn A ('cooks') vì diễn tả thói quen hàng ngày của cô Mai.",
+                        translation: "Cô Mai thường nấu bữa tối cho gia đình sau giờ làm việc."
+                    },
+                    {
+                        num: "Câu 6",
+                        stem: "He ___ me a big teddy bear on my birthday last week.",
+                        options: [
+                            { letter: "A", text: "buy" },
+                            { letter: "B", text: "buying" },
+                            { letter: "C", text: "bought" },
+                            { letter: "D", text: "will buy" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chuẩn luôn!",
+                        sign: "Cuối câu có 'last week' (tuần trước).",
+                        method: "Thì Quá Khứ Đơn: Dùng động từ cột 2 (V2/ed).",
+                        reason: "Chọn C ('bought' là quá khứ của 'buy') vì hành động đã xảy ra vào tuần trước.",
+                        translation: "Anh ấy đã mua cho tôi một chú gấu bông lớn vào dịp sinh nhật tuần trước."
+                    },
+                    {
+                        num: "Câu 7",
+                        stem: "I ___ a party last weekend, and I really enjoyed it.",
+                        options: [
+                            { letter: "A", text: "have" },
+                            { letter: "B", text: "has" },
+                            { letter: "C", text: "had" },
+                            { letter: "D", text: "is having" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "Có 'last weekend' (cuối tuần trước) và vế sau 'enjoyed' chia quá khứ đơn.",
+                        method: "Thì Quá Khứ Đơn: 'have' đổi thành 'had'.",
+                        reason: "Chọn C ('had') để đồng nhất thì quá khứ đơn trong toàn câu.",
+                        translation: "Tôi đã tổ chức một bữa tiệc vào cuối tuần trước, và tôi thực sự rất thích nó."
+                    },
+                    {
+                        num: "Câu 8",
+                        stem: "My father ___ an electric car next month.",
+                        options: [
+                            { letter: "A", text: "bought" },
+                            { letter: "B", text: "buys" },
+                            { letter: "C", text: "buying" },
+                            { letter: "D", text: "will buy" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Cuối câu có 'next month' (tháng tới).",
+                        method: "Thì Tương Lai Đơn: will + V nguyên mẫu.",
+                        reason: "Chọn D ('will buy') vì hành động sẽ diễn ra trong tương lai.",
+                        translation: "Bố tôi sẽ mua một chiếc ô tô điện vào tháng tới."
+                    },
+                    {
+                        num: "Câu 9",
+                        stem: "It didn't rain in the spring. I think we ___ water next summer.",
+                        options: [
+                            { letter: "A", text: "run out of" },
+                            { letter: "B", text: "ran out of" },
+                            { letter: "C", text: "were running out of" },
+                            { letter: "D", text: "will run out of" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chuẩn luôn!",
+                        sign: "Có cụm dự đoán 'I think' + mốc thời gian tương lai 'next summer' (mùa hè tới).",
+                        method: "Thì Tương Lai Đơn diễn tả dự đoán có 'I think': will + V nguyên mẫu.",
+                        reason: "Chọn D ('will run out of' = sẽ cạn kiệt).",
+                        translation: "Mùa xuân đã không mưa. Tôi nghĩ chúng ta sẽ cạn kiệt nước vào mùa hè tới."
+                    },
+                    {
+                        num: "Câu 10",
+                        stem: "Do you know a person who delivers goods to people's houses or workplaces?",
+                        options: [
+                            { letter: "A", text: "police officer" },
+                            { letter: "B", text: "garbage collector" },
+                            { letter: "C", text: "electrician" },
+                            { letter: "D", text: "delivery person" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Từ khóa định nghĩa: 'delivers goods to people's houses' (giao hàng hóa tới nhà người dân).",
+                        method: "Từ vựng nghề nghiệp phục vụ cộng đồng (Unit 1).",
+                        reason: "Chọn D ('delivery person' = nhân viên giao hàng) khớp với động từ 'delivers goods'.",
+                        translation: "Bạn có biết người giao hàng hóa đến nhà hoặc nơi làm việc của mọi người gọi là gì không? ➔ Nhân viên giao hàng."
+                    },
+                    {
+                        num: "Câu 11",
+                        stem: "She told me how ___ English to get good marks.",
+                        options: [
+                            { letter: "A", text: "to study" },
+                            { letter: "B", text: "study" },
+                            { letter: "C", text: "studying" },
+                            { letter: "D", text: "studied" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Trước chỗ trống là từ để hỏi 'how' (làm thế nào).",
+                        method: "Cấu trúc: Wh-word (how/what/where/when) + to V nguyên mẫu.",
+                        reason: "Chọn A ('to study') đúng ngữ pháp rút gọn mệnh đề sau từ để hỏi.",
+                        translation: "Cô ấy đã chỉ cho tôi cách học tiếng Anh để đạt điểm cao."
+                    },
+                    {
+                        num: "Câu 12",
+                        stem: "Bun Bo, Hu Tieu and Banh Cay are examples of famous Vietnamese ___.",
+                        options: [
+                            { letter: "A", text: "artisan" },
+                            { letter: "B", text: "souvenir" },
+                            { letter: "C", text: "speciality" },
+                            { letter: "D", text: "handicraft" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chuẩn luôn!",
+                        sign: "Chủ ngữ là các món ăn đặc trưng vùng miền: 'Bun Bo, Hu Tieu and Banh Cay'.",
+                        method: "Từ vựng Unit 1: speciality = đặc sản địa phương.",
+                        reason: "Chọn C ('speciality') vì Bún bò, Hủ tiếu, Bánh cáy là các món đặc sản nổi tiếng của Việt Nam.",
+                        translation: "Bún bò, Hủ tiếu và Bánh cáy là những ví dụ về đặc sản nổi tiếng của Việt Nam."
+                    },
+                    {
+                        num: "Câu 13",
+                        stem: "The tourists wondered where ___ the traditional crafts in the village market.",
+                        options: [
+                            { letter: "A", text: "should buy" },
+                            { letter: "B", text: "buying" },
+                            { letter: "C", text: "to buy" },
+                            { letter: "D", text: "A & B" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "Động từ 'wondered' + từ để hỏi 'where' đứng ngay trước chỗ trống.",
+                        method: "Cấu trúc: wonder + Wh-word + to V.",
+                        reason: "Chọn C ('to buy') vì sau 'where' không có chủ ngữ nên phải đi với 'to V'.",
+                        translation: "Các du khách tự hỏi nên mua đồ thủ công truyền thống ở đâu trong chợ làng."
+                    },
+                    {
+                        num: "Câu 14",
+                        stem: "Mr John asked me how ___ to the nearest shopping mall?",
+                        options: [
+                            { letter: "A", text: "to get" },
+                            { letter: "B", text: "getting" },
+                            { letter: "C", text: "should get" },
+                            { letter: "D", text: "got" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Có cụm 'asked me how ___' (hỏi tôi làm sao để đi tới...).",
+                        method: "Cấu trúc: ask + O + Wh-word + to V.",
+                        reason: "Chọn A ('to get') theo đúng công thức 'how to get to somewhere' (làm sao để đi đến đâu).",
+                        translation: "Ông John đã hỏi tôi làm thế nào để đi đến trung tâm mua sắm gần nhất."
+                    },
+                    {
+                        num: "Câu 15",
+                        stem: "A skilled local ___ made this conical hat in Chuong village three days ago. (4 đáp án nằm ở đầu Trang 4)",
+                        options: [
+                            { letter: "A", text: "electrician" },
+                            { letter: "B", text: "firefighter" },
+                            { letter: "C", text: "garbage collector" },
+                            { letter: "D", text: "artisan" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Đáp án D (ở đầu Trang 4) ➔ Chính xác!",
+                        sign: "Từ khóa: 'made this conical hat in Chuong village' (làm chiếc nón lá này ở làng Chuông).",
+                        method: "Từ vựng nghề thủ công truyền thống: artisan = nghệ nhân.",
+                        reason: "Chọn D ('artisan') vì người làm nón lá thủ công lành nghề được gọi là nghệ nhân.",
+                        translation: "Một nghệ nhân địa phương lành nghề đã làm chiếc nón lá này ở làng Chuông cách đây ba ngày."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        pageNumber: 4,
+        pageTitle: "TRANG 4 (Tờ in số 4): Tiếp Ex 6 (Câu 16 ➔ 37) - Giới Từ, Phrasal Verbs & So Sánh Kép",
+        pageSummary: "Chuẩn tờ in số 4: Có số '4' in trên đầu ➔ Bắt đầu từ câu 16 ('decide on when to start') đến hết câu 37 ('start walking early').",
+        sections: [
+            {
+                sectionTitle: "EXERCISE 6 (Câu 16 ➔ 37 ở Trang 4): Giới Từ, Câu Điều Kiện, Cụm Động Từ & So Sánh Kép",
+                sectionTip: "💡 Học thuộc 4 cụm động từ (Phrasal verbs) câu 24-27: get around (đi lại quanh vùng), hang out with (đi chơi với), hand down (truyền lại nghề), cut down on (cắt giảm).",
+                questions: [
+                    {
+                        num: "Câu 16",
+                        stem: "He still can't decide on when ___ the training program, whether in the spring or...",
+                        options: [
+                            { letter: "A", text: "to start" },
+                            { letter: "B", text: "starting" },
+                            { letter: "C", text: "started" },
+                            { letter: "D", text: "start" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Có cụm 'decide on when ___' (quyết định khi nào bắt đầu).",
+                        method: "Cấu trúc: Wh-word (when) + to V.",
+                        reason: "Chọn A ('to start') đứng sau từ để hỏi 'when'.",
+                        translation: "Anh ấy vẫn chưa thể quyết định khi nào nên bắt đầu chương trình đào tạo..."
+                    },
+                    {
+                        num: "Câu 17",
+                        stem: "___ Sunday afternoons, she usually goes shopping with her family.",
+                        options: [
+                            { letter: "A", text: "In" },
+                            { letter: "B", text: "At" },
+                            { letter: "C", text: "On" },
+                            { letter: "D", text: "Since" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chuẩn luôn!",
+                        sign: "Sau chỗ trống là 'Sunday afternoons' (có thứ trong tuần là Sunday đứng đầu).",
+                        method: "Giới từ chỉ thời gian: Đi với Thứ hoặc Buổi của một Thứ cụ thể luôn dùng 'On'.",
+                        reason: "Chọn C ('On') vì dù có 'afternoons' nhưng đi kèm 'Sunday' nên bắt buộc dùng 'On'.",
+                        translation: "Vào các buổi chiều Chủ nhật, cô ấy thường đi mua sắm cùng gia đình."
+                    },
+                    {
+                        num: "Câu 18",
+                        stem: "The children are playing ___ the garden.",
+                        options: [
+                            { letter: "A", text: "on" },
+                            { letter: "B", text: "between" },
+                            { letter: "C", text: "in" },
+                            { letter: "D", text: "to" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "Sau chỗ trống là không gian 'the garden' (khu vườn).",
+                        method: "Cụm giới từ không gian: in the garden (ở trong vườn).",
+                        reason: "Chọn C ('in') chỉ hoạt động diễn ra bên trong khuôn viên khu vườn.",
+                        translation: "Bọn trẻ đang chơi đùa ở trong vườn."
+                    },
+                    {
+                        num: "Câu 19",
+                        stem: "I live in a ___ street which is full of people and vehicles moving around all day.",
+                        options: [
+                            { letter: "A", text: "quiet" },
+                            { letter: "B", text: "bustling" },
+                            { letter: "C", text: "calm" },
+                            { letter: "D", text: "empty" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Quá chuẩn!",
+                        sign: "Mệnh đề quan hệ giải thích rõ: 'full of people and vehicles moving around all day' (đầy người và xe cộ qua lại cả ngày).",
+                        method: "Từ vựng Unit 2 (City Life): bustling = nhộn nhịp, hối hả, tấp nập.",
+                        reason: "Chọn B ('bustling') vì đông người và xe cộ suốt ngày là con phố nhộn nhịp.",
+                        translation: "Tôi sống trên một con phố nhộn nhịp đầy người và xe cộ qua lại suốt cả ngày."
+                    },
+                    {
+                        num: "Câu 20",
+                        stem: "If you don't set priority to work, you ___ accomplish your goal.",
+                        options: [
+                            { letter: "A", text: "can't" },
+                            { letter: "B", text: "shouldn't" },
+                            { letter: "C", text: "mustn't" },
+                            { letter: "D", text: "don't" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Câu điều kiện loại 1 diễn tả khả năng đạt được mục tiêu ('accomplish your goal').",
+                        method: "Câu điều kiện loại 1 với động từ khuyết thiếu (Modal verbs in first conditional - Unit 3).",
+                        reason: "Chọn A ('can't' = không thể): Nếu không biết ưu tiên công việc thì bạn không thể hoàn thành mục tiêu.",
+                        translation: "Nếu bạn không đặt thứ tự ưu tiên cho công việc, bạn không thể hoàn thành mục tiêu của mình."
+                    },
+                    {
+                        num: "Câu 21",
+                        stem: "If I ___ all needed ingredients, I can make nice spaghetti.",
+                        options: [
+                            { letter: "A", text: "had" },
+                            { letter: "B", text: "have" },
+                            { letter: "C", text: "having" },
+                            { letter: "D", text: "will have" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chuẩn luôn!",
+                        sign: "Mệnh đề chính dùng 'I can make' (loại 1) + mệnh đề phụ bắt đầu bằng 'If I...'.",
+                        method: "Công thức Câu điều kiện loại 1: If + S + V (hiện tại đơn), S + can/will/may/must + V0.",
+                        reason: "Chọn B ('have') vì chủ ngữ 'I' ở thì hiện tại đơn dùng động từ nguyên mẫu.",
+                        translation: "Nếu tôi có đủ tất cả nguyên liệu cần thiết, tôi có thể làm món mì Ý thật ngon."
+                    },
+                    {
+                        num: "Câu 22",
+                        stem: "If you see the sign 'No entrance', you ___ not enter the area.",
+                        options: [
+                            { letter: "A", text: "may" },
+                            { letter: "B", text: "might" },
+                            { letter: "C", text: "must" },
+                            { letter: "D", text: "would" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "Có biển báo cấm 'No entrance' (Cấm vào) + chữ 'not enter' phía sau.",
+                        method: "Dùng 'must not' (mustn't) trong câu điều kiện loại 1 để chỉ sự cấm đoán bắt buộc theo luật/biển báo.",
+                        reason: "Chọn C ('must') ghép với 'not' tạo thành 'must not enter' (tuyệt đối không được vào).",
+                        translation: "Nếu bạn nhìn thấy biển báo 'Cấm vào', bạn không được phép đi vào khu vực đó."
+                    },
+                    {
+                        num: "Câu 23",
+                        stem: "If you train harder in three months, you ___ run a marathon.",
+                        options: [
+                            { letter: "A", text: "must" },
+                            { letter: "B", text: "might not" },
+                            { letter: "C", text: "can" },
+                            { letter: "D", text: "should not" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "Mệnh đề If: 'If you train harder in three months' (Nếu bạn tập luyện chăm chỉ hơn trong 3 tháng) ➔ kết quả về năng lực.",
+                        method: "Dùng 'can' trong câu điều kiện loại 1 để diễn tả khả năng/năng lực có thể đạt được.",
+                        reason: "Chọn C ('can' = có thể) phù hợp nghĩa tích cực khi chăm chỉ luyện tập.",
+                        translation: "Nếu bạn tập luyện chăm chỉ hơn trong ba tháng, bạn có thể chạy được giải marathon."
+                    },
+                    {
+                        num: "Câu 24",
+                        stem: "During my vacation in Paris, I used the metro to ___ the city and visit all the famous landmarks.",
+                        options: [
+                            { letter: "A", text: "get up" },
+                            { letter: "B", text: "get around" },
+                            { letter: "C", text: "move in" },
+                            { letter: "D", text: "carry out" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Quá chuẩn!",
+                        sign: "Có phương tiện 'used the metro' (dùng tàu điện ngầm) và tân ngữ 'the city'.",
+                        method: "Phrasal verb Unit 2: get around = đi lại, di chuyển vòng quanh (một thành phố/khu vực).",
+                        reason: "Chọn B ('get around') vì đi tàu điện ngầm là để di chuyển quanh thành phố.",
+                        translation: "Trong kỳ nghỉ ở Paris, tôi đã sử dụng tàu điện ngầm để đi lại quanh thành phố và thăm mọi địa danh nổi tiếng."
+                    },
+                    {
+                        num: "Câu 25",
+                        stem: "It's always fun to ___ my friends at the local coffee shop and catch up on each other's lives.",
+                        options: [
+                            { letter: "A", text: "cut down on" },
+                            { letter: "B", text: "hang out with" },
+                            { letter: "C", text: "run out of" },
+                            { letter: "D", text: "come down with" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chính xác!",
+                        sign: "Sau chỗ trống là 'my friends at the local coffee shop' (bạn bè ở quán cà phê).",
+                        method: "Phrasal verb: hang out with somebody = đi chơi, tụ tập trò chuyện cùng ai.",
+                        reason: "Chọn B ('hang out with') vì đi với tân ngữ chỉ người ('my friends').",
+                        translation: "Thật vui khi được tụ tập đi chơi với bạn bè tại quán cà phê địa phương và cập nhật chuyện cuộc sống của nhau."
+                    },
+                    {
+                        num: "Câu 26",
+                        stem: "The artisans in my village usually ___ their skills to their eldest children.",
+                        options: [
+                            { letter: "A", text: "find out" },
+                            { letter: "B", text: "hand down" },
+                            { letter: "C", text: "come back" },
+                            { letter: "D", text: "look round" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chuẩn luôn!",
+                        sign: "Chủ ngữ 'The artisans' (các nghệ nhân) + 'their skills to their eldest children' (kỹ năng cho con trưởng).",
+                        method: "Phrasal verb Unit 1: hand down (= pass down) = truyền lại cho thế hệ sau.",
+                        reason: "Chọn B ('hand down') mang nghĩa truyền nghề cho con cháu.",
+                        translation: "Các nghệ nhân trong làng tôi thường truyền lại kỹ năng nghề cho những người con trưởng của họ."
+                    },
+                    {
+                        num: "Câu 27",
+                        stem: "My sister and I are trying to ___ sweet food and soft drinks.",
+                        options: [
+                            { letter: "A", text: "carry out" },
+                            { letter: "B", text: "cut down on" },
+                            { letter: "C", text: "hand down" },
+                            { letter: "D", text: "come down with" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chính xác!",
+                        sign: "Sau chỗ trống là 'sweet food and soft drinks' (đồ ăn ngọt và nước ngọt có ga).",
+                        method: "Phrasal verb: cut down on something = cắt giảm lượng tiêu thụ thứ gì.",
+                        reason: "Chọn B ('cut down on') vì đồ ngọt và nước có ga cần được cắt giảm để tốt cho sức khỏe.",
+                        translation: "Chị gái tôi và tôi đang cố gắng cắt giảm đồ ăn ngọt và nước giải khát có ga."
+                    },
+                    {
+                        num: "Câu 28",
+                        stem: "The Eiffel Tower is a major tourist ___ in Paris.",
+                        options: [
+                            { letter: "A", text: "attract" },
+                            { letter: "B", text: "attracted" },
+                            { letter: "C", text: "attracting" },
+                            { letter: "D", text: "attraction" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Cụm danh từ bắt đầu bằng 'a major tourist ___' (cần một danh từ đếm được số ít).",
+                        method: "Cụm danh từ cố định: tourist attraction = địa điểm thu hút khách du lịch.",
+                        reason: "Chọn D ('attraction') là danh từ làm trung tâm của cụm 'a major tourist attraction'.",
+                        translation: "Tháp Eiffel là một địa điểm thu hút khách du lịch lớn ở Paris."
+                    },
+                    {
+                        num: "Câu 29",
+                        stem: "Having a phone nearby can be a big ___ while studying.",
+                        options: [
+                            { letter: "A", text: "distract" },
+                            { letter: "B", text: "distracted" },
+                            { letter: "C", text: "distraction" },
+                            { letter: "D", text: "distracting" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chuẩn luôn!",
+                        sign: "Trước chỗ trống có mạo từ và tính từ 'a big ___' (cần một danh từ số ít).",
+                        method: "Bài tập Từ loại (Word Form): sau 'a big' bắt buộc là danh từ 'distraction' (sự gây xao nhãng).",
+                        reason: "Chọn C ('distraction') vì có mạo từ 'a' và tính từ 'big' đứng trước.",
+                        translation: "Để điện thoại bên cạnh có thể là một sự xao nhãng lớn trong lúc đang học bài."
+                    },
+                    {
+                        num: "Câu 30",
+                        stem: "Regular exercise is important for both mental and ___ health.",
+                        options: [
+                            { letter: "A", text: "physic" },
+                            { letter: "B", text: "physics" },
+                            { letter: "C", text: "physical" },
+                            { letter: "D", text: "physically" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "Cấu trúc song song 'both mental and ___ health' (cả sức khỏe tinh thần và thể chất).",
+                        method: "Cấu trúc song hành (Parallel structure): 'mental' là tính từ ➔ sau 'and' cũng phải là tính từ bổ nghĩa cho danh từ 'health'.",
+                        reason: "Chọn C ('physical' = thuộc về thể chất) để tạo cụm chuẩn 'mental and physical health'.",
+                        translation: "Tập thể dục thường xuyên rất quan trọng đối với cả sức khỏe tinh thần và thể chất."
+                    },
+                    {
+                        num: "Câu 31",
+                        stem: "Ha Noi is like a ___, there are too many high buildings there.",
+                        options: [
+                            { letter: "A", text: "small" },
+                            { letter: "B", text: "comfortable" },
+                            { letter: "C", text: "concrete jungle" },
+                            { letter: "D", text: "crowded" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Quá chuẩn!",
+                        sign: "Cấu trúc 'is like a ___' (giống như một...) + vế sau giải thích: 'there are too many high buildings there' (có quá nhiều tòa nhà cao tầng ở đó).",
+                        method: "Từ vựng trọng tâm Unit 2: concrete jungle = rừng bê tông (thành phố dày đặc nhà cao tầng).",
+                        reason: "Chọn C ('concrete jungle') vì sau mạo từ 'a' cần cụm danh từ chỉ thành phố có quá nhiều tòa nhà cao tầng san sát.",
+                        translation: "Hà Nội giống như một rừng bê tông, có quá nhiều tòa nhà cao tầng ở đó."
+                    },
+                    {
+                        num: "Câu 32",
+                        stem: "Mr Nam really wants to buy a flat in the big city. ___, he has to save money from now.",
+                        options: [
+                            { letter: "A", text: "So" },
+                            { letter: "B", text: "However" },
+                            { letter: "C", text: "But" },
+                            { letter: "D", text: "Therefore" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Đứng đầu câu mới sau dấu chấm (`.`) và ngăn cách với mệnh đề sau bằng dấu phẩy (`,`). Vế trước là nguyên nhân, vế sau là kết quả.",
+                        method: "Trạng từ liên kết chỉ kết quả đứng trước dấu phẩy: Therefore, (Do đó, / Vì vậy,).",
+                        reason: "Chọn D ('Therefore') vì vừa hợp nghĩa chỉ kết quả (nên phải tiết kiệm tiền), vừa đứng đầu câu trước dấu phẩy (So không đứng trước dấu phẩy kiểu trang trọng này).",
+                        translation: "Ông Nam rất muốn mua một căn hộ ở thành phố lớn. Do đó, ông ấy phải tiết kiệm tiền ngay từ bây giờ."
+                    },
+                    {
+                        num: "Câu 33",
+                        stem: "I think the more congested the streets are, ___ I feel every day.",
+                        options: [
+                            { letter: "A", text: "the most tired" },
+                            { letter: "B", text: "the tired" },
+                            { letter: "C", text: "most tired" },
+                            { letter: "D", text: "the more tired" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chuẩn luôn!",
+                        sign: "Vế đầu có cấu trúc So sánh kép 'the more congested the streets are,'.",
+                        method: "Công thức So sánh kép (Double Comparatives - Unit 2): The + so sánh hơn + S + V, the + so sánh hơn + S + V.",
+                        reason: "Chọn D ('the more tired') vì tính từ 'tired' có dạng so sánh hơn là 'more tired' kèm 'the' phía trước.",
+                        translation: "Tôi nghĩ đường phố càng tắc nghẽn thì mỗi ngày tôi càng cảm thấy mệt mỏi hơn."
+                    },
+                    {
+                        num: "Câu 34",
+                        stem: "Community helpers, such as ___, play a vital role in maintaining the safety and well-being of residents.",
+                        options: [
+                            { letter: "A", text: "shopkeepers" },
+                            { letter: "B", text: "engineers" },
+                            { letter: "C", text: "chefs" },
+                            { letter: "D", text: "police officers" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Từ khóa nhiệm vụ: 'maintaining the safety and well-being of residents' (duy trì sự an toàn và bình yên cho cư dân).",
+                        method: "Dựa vào chức năng nghề nghiệp trong cộng đồng (Unit 1).",
+                        reason: "Chọn D ('police officers' = các chiến sĩ cảnh sát/công an) là người bảo vệ sự an toàn của người dân.",
+                        translation: "Những người phục vụ cộng đồng, chẳng hạn như các sĩ quan cảnh sát, đóng vai trò thiết yếu trong việc duy trì sự an toàn và phúc lợi cho cư dân."
+                    },
+                    {
+                        num: "Câu 35",
+                        stem: "The facilities which are available to everybody in an area like parks, schools, shopping centres, etc. are public ___.",
+                        options: [
+                            { letter: "A", text: "services" },
+                            { letter: "B", text: "amenities" },
+                            { letter: "C", text: "features" },
+                            { letter: "D", text: "offices" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Quá chuẩn!",
+                        sign: "Các cơ sở vật chất như công viên, trường học, trung tâm mua sắm + từ 'public ___'.",
+                        method: "Cụm từ vựng SGK Unit 2: public amenities = các tiện ích công cộng.",
+                        reason: "Chọn B ('amenities') ghép với 'public' tạo thành thuật ngữ chuẩn trong SGK Tiếng Anh 9.",
+                        translation: "Các cơ sở vật chất phục vụ mọi người trong khu vực như công viên, trường học, trung tâm mua sắm... được gọi là tiện ích công cộng."
+                    },
+                    {
+                        num: "Câu 36",
+                        stem: "If you work hard, you will achieve more.",
+                        options: [
+                            { letter: "A", text: "The harder you work, the more you will achieve." },
+                            { letter: "B", text: "The less you work, the more you will achieve." },
+                            { letter: "C", text: "The more you work, the less you will achieve." },
+                            { letter: "D", text: "The more you achieve, the harder you need to work." }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Viết lại câu điều kiện sang câu So sánh kép: 'work hard' ➔ 'The harder you work'; 'achieve more' ➔ 'the more you will achieve'.",
+                        method: "Công thức: The + adj/adv-er + S + V, the + more + S + V.",
+                        reason: "Chọn A giữ đúng cả cấu trúc ngữ pháp lẫn ý nghĩa thuận chiều của câu gốc.",
+                        translation: "Nếu bạn làm việc chăm chỉ, bạn sẽ đạt được nhiều hơn ➔ Bạn càng làm việc chăm chỉ, bạn sẽ càng đạt được nhiều hơn."
+                    },
+                    {
+                        num: "Câu 37",
+                        stem: "If we start walking early, we will reach the destination faster.",
+                        options: [
+                            { letter: "A", text: "The later we start walking, the slower we will reach the destination." },
+                            { letter: "B", text: "The earlier we start walking, the slower we will reach the destination." },
+                            { letter: "C", text: "The earlier we start walking, the faster we will reach the destination." },
+                            { letter: "D", text: "The faster we walk, the earlier we will reach the destination. (ở đầu Trang 5)" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "'early' đổi sang so sánh hơn là 'earlier'; vế sau đã có sẵn 'faster'.",
+                        method: "Biến đổi sang So sánh kép: The earlier..., the faster...",
+                        reason: "Chọn C đúng công thức và giữ nguyên nghĩa gốc của câu.",
+                        translation: "Chúng ta càng bắt đầu đi bộ sớm thì sẽ càng đến đích nhanh hơn."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        pageNumber: 5,
+        pageTitle: "TRANG 5 (Tờ in số 5): Ex 6 (Câu 38-40) + Giao Tiếp Ex 7 (1-5) + Ex 8 (Câu 1-2)",
+        pageSummary: "Chuẩn tờ in số 5: Có số '5' in trên đầu ➔ Câu 38-40 ➔ Giao tiếp Ex 7 (sửa câu 4 & 5) ➔ Sắp xếp Ex 8 câu 1 (Long An) và đầu câu 2.",
+        sections: [
+            {
+                sectionTitle: "EXERCISE 6 (Câu 38 ➔ 40 ở đầu Trang 5): Viết Lại Câu So Sánh Kép & Wh- + to V",
+                sectionTip: "💡 Khi viết lại câu có 'wonder / don't know + Wh- + S + can + V', ta chỉ cần bỏ 'S + can' và thay bằng 'to + V'!",
+                questions: [
+                    {
+                        num: "Câu 38",
+                        stem: "If you practice more, you will become more skillful.",
+                        options: [
+                            { letter: "A", text: "The more you practice, the less skillful you will become." },
+                            { letter: "B", text: "The more skillful you become, the less you practice." },
+                            { letter: "C", text: "The more you practice, the more skillful you will become." },
+                            { letter: "D", text: "The less you practice, the more skillful you will become." }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "'practice more' ➔ 'The more you practice'; 'more skillful' ➔ 'the more skillful you will become'.",
+                        method: "So sánh kép: The more + S + V, the more + adj + S + V.",
+                        reason: "Chọn C hoàn toàn khớp nghĩa: Càng luyện tập nhiều thì càng trở nên khéo léo hơn.",
+                        translation: "Bạn càng luyện tập nhiều, bạn sẽ càng trở nên khéo léo/điêu luyện hơn."
+                    },
+                    {
+                        num: "Câu 39",
+                        stem: "They are wondering where they can buy traditional handicrafts.",
+                        options: [
+                            { letter: "A", text: "They are wondering where buying traditional handicrafts." },
+                            { letter: "B", text: "They are wondering where buy traditional handicrafts." },
+                            { letter: "C", text: "They are wondering where to buy traditional handicrafts." },
+                            { letter: "D", text: "They are wondering where to buying traditional handicrafts." }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chuẩn luôn!",
+                        sign: "Mệnh đề sau từ để hỏi 'where they can buy' có cùng chủ ngữ 'They' với mệnh đề chính.",
+                        method: "Rút gọn 'where + S + can + V' ➔ 'where + to V'.",
+                        reason: "Chọn C ('where to buy') là cấu trúc chuẩn duy nhất.",
+                        translation: "Họ đang phân vân không biết nên mua đồ thủ công truyền thống ở đâu."
+                    },
+                    {
+                        num: "Câu 40",
+                        stem: "Mary doesn't know how she can get to the community centre.",
+                        options: [
+                            { letter: "A", text: "Mary doesn't know how she got to the community centre." },
+                            { letter: "B", text: "Mary doesn't know how she gets to the community centre." },
+                            { letter: "C", text: "Mary doesn't know how to getting to the community centre." },
+                            { letter: "D", text: "Mary doesn't know how to get to the community centre." }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Cụm 'how she can get' cùng chủ ngữ với 'Mary'.",
+                        method: "Rút gọn 'how + S + can + V' ➔ 'how + to V'.",
+                        reason: "Chọn D ('how to get') đúng ngữ pháp tiếng Anh 9.",
+                        translation: "Mary không biết làm thế nào để đi đến trung tâm cộng đồng."
+                    }
+                ]
+            },
+            {
+                sectionTitle: "EXERCISE 7 (Trang 5): Tình Huống Giao Tiếp (5 câu - Chú ý sửa Câu 4 & 5!)",
+                sectionTip: "💡 CỰC QUAN TRỌNG: 1) Khi người ta hỏi 'Do/Would you mind + V-ing?' (Bạn có phiền... không?) ➔ Đồng ý giúp thì trả lời 'No, not at all.' hoặc 'Not at all.' (Không phiền chút nào!). 2) Khi người ta hỏi 'Could you...?' ➔ Trả lời 'Certainly.' (Chắc chắn rồi!). Còn 'That would be great!' CHỈ dùng khi người kia ĐỀ NGHỊ giúp mình!",
+                questions: [
+                    {
+                        num: "Câu 1",
+                        stem: "Lan is asking Mai for some help. - Lan: 'Do you mind opening the window for me?' - Mai: '___'",
+                        options: [
+                            { letter: "A", text: "No, not at all." },
+                            { letter: "B", text: "No, I mind it." },
+                            { letter: "C", text: "Yes, I do." },
+                            { letter: "D", text: "Yes, go ahead." }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Câu nhờ vả bắt đầu bằng 'Do you mind + V-ing?' (Bạn có phiền mở giúp mình cửa sổ không?).",
+                        method: "Đáp lại câu 'Do/Would you mind + V-ing': Nếu vui vẻ đồng ý làm giúp thì phải nói 'Không phiền đâu' = 'No, not at all.' (Nếu chọn Yes, I do nghĩa là 'Có, tôi thấy phiền lắm'!).",
+                        reason: "Chọn A ('No, not at all.') thể hiện sự lịch sự sẵn lòng giúp đỡ.",
+                        translation: "Lan: Bạn có phiền mở cửa sổ giúp mình không? - Mai: Không, không phiền chút nào đâu."
+                    },
+                    {
+                        num: "Câu 2",
+                        stem: "Mai: 'Do you mind carrying this suitcase for me?' - Tom: '___'",
+                        options: [
+                            { letter: "A", text: "That would be great!" },
+                            { letter: "B", text: "Yes, I am." },
+                            { letter: "C", text: "Here you are." },
+                            { letter: "D", text: "Not at all." }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chuẩn luôn!",
+                        sign: "Mai nhờ Tom xách hộ vali bằng cấu trúc 'Do you mind carrying...?'",
+                        method: "Đáp lại lời nhờ vả 'Do you mind + V-ing' bằng 'Not at all.' (Không phiền chút nào).",
+                        reason: "Chọn D ('Not at all.') là câu trả lời chuẩn SGK Global Success 9 Unit 2.",
+                        translation: "Mai: Bạn có phiền xách giúp mình chiếc vali này không? - Tom: Không phiền chút nào."
+                    },
+                    {
+                        num: "Câu 3",
+                        stem: "Hoa: 'Ms Mai won't come back until noon. Would you like me to leave a note for her?' - Ms Hoai: '___'",
+                        options: [
+                            { letter: "A", text: "Sorry. I can't find my notes." },
+                            { letter: "B", text: "That's great. Thanks for your help." },
+                            { letter: "C", text: "Why would you like to leave?" },
+                            { letter: "D", text: "How about leaving her alone?" }
+                        ],
+                        correct: "B",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh B ➔ Chính xác!",
+                        sign: "Hoa đưa ra lời ĐỀ NGHỊ GIÚP ĐỠ (Offer): 'Would you like me to...?' (Cô có muốn cháu để lại lời nhắn cho cô ấy không?).",
+                        method: "Đáp lại lời đề nghị giúp đỡ mình: khen tuyệt vời và cảm ơn ('That's great. Thanks for your help.').",
+                        reason: "Chọn B hoàn toàn lịch sự và đúng ngữ cảnh nhận sự giúp đỡ.",
+                        translation: "Hoa: Cô Mai đến trưa mới về. Cô có muốn cháu để lại lời nhắn cho cô ấy không? - Cô Hoài: Tuyệt quá. Cảm ơn sự giúp đỡ của cháu nhé."
+                    },
+                    {
+                        num: "Câu 4",
+                        stem: "Ann: 'Could you show me how to open this gate, please?' - Mr Nam: '___'",
+                        options: [
+                            { letter: "A", text: "That would be great!" },
+                            { letter: "B", text: "Certainly." },
+                            { letter: "C", text: "Here you are." },
+                            { letter: "D", text: "Not at all." }
+                        ],
+                        correct: "B",
+                        warn: true,
+                        paperStatus: "⚠️ SỬA LỖI TRÊN GIẤY: Trên giấy khoanh A và C đều sai ➔ Phải chọn B (Certainly.)!",
+                        sign: "Ann đang NHỜ ông Nam: 'Could you show me...?' (Chú có thể chỉ cho cháu cách mở cổng này được không ạ?).",
+                        method: "Phân biệt rõ: Khi người khác NHỜ MÌNH ('Could you...?'), mình đồng ý giúp thì nói 'Certainly.' (Chắc chắn rồi!). Không nói 'That would be great!' (vì ông Nam là người giúp chứ không phải người được giúp), cũng không nói 'Here you are' (Của bạn đây - chỉ dùng khi đưa đồ vật).",
+                        reason: "Chọn B ('Certainly.' = Chắc chắn rồi / Được chứ) là đáp án duy nhất đúng.",
+                        translation: "Ann: Chú có thể chỉ cho cháu cách mở cánh cổng này được không ạ? - Ông Nam: Chắc chắn rồi."
+                    },
+                    {
+                        num: "Câu 5",
+                        stem: "A: 'Would you mind telling me the name of the new garbage collector?' - B: '___. His name is Tuan.'",
+                        options: [
+                            { letter: "A", text: "That would be great!" },
+                            { letter: "B", text: "Certainly." },
+                            { letter: "C", text: "Here you are." },
+                            { letter: "D", text: "Not at all." }
+                        ],
+                        correct: "D",
+                        warn: true,
+                        paperStatus: "⚠️ Trên giấy khoanh cả B và D ➔ Chốt D (Not at all.) để ăn trọn điểm nha!",
+                        sign: "Câu hỏi bắt đầu bằng 'Would you mind + V-ing?' (Bạn có phiền cho tôi biết tên... không?).",
+                        method: "Mẹo bất bại đi thi: Hỏi 'Could/Can you...?' ➔ chọn 'Certainly.'. Hỏi 'Do/Would you mind + V-ing?' ➔ chọn 'Not at all.'!",
+                        reason: "Chọn D ('Not at all.' = Không phiền chút nào) vì câu hỏi dùng 'Would you mind'.",
+                        translation: "A: Bạn có phiền cho tôi biết tên của bác thu gom rác mới không? - B: Không phiền chút nào. Tên bác ấy là Tuấn."
+                    }
+                ]
+            },
+            {
+                sectionTitle: "EXERCISE 8 (Câu 1 ở cuối Trang 5): Sắp Xếp Email / Đoạn Văn",
+                sectionTip: "💡 Mẹo sắp xếp bức thư (Email): Luôn bắt đầu bằng lời chào 'Hi + Tên,' và luôn kết thúc bằng lời chúc 'Cheers, + Ký tên'!",
+                questions: [
+                    {
+                        num: "Question 1",
+                        stem: "Sắp xếp bức thư của Trang gửi Alice kể về vùng ngoại ô Long An (a, b, c, d):",
+                        options: [
+                            { letter: "A", text: "c - a - d - b" },
+                            { letter: "B", text: "c - a - b - d" },
+                            { letter: "C", text: "c - b - a - d" },
+                            { letter: "D", text: "c - d - a - b" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Câu (c) có 'Hi Alice,' (mở đầu thư) và câu (b) có 'Cheers, Trang' (kết thư).",
+                        method: "Mở thư (c) ➔ Giới thiệu nơi ở Long An có 2 công viên (a) ➔ Hẹn khi bạn tới sẽ dẫn đi những nơi này 'these places' (d) ➔ Kết thư (b).",
+                        reason: "Chọn A (c - a - d - b) vì từ 'these places' ở câu (d) nối tiếp trực tiếp cho 'two parks' ở câu (a).",
+                        translation: "(c) Chào Alice, Cậu khỏe không? Hôm nay mình sẽ kể về các địa điểm thú vị ở quê mình. (a) Mình sống ở ngoại ô Long An... có 2 công viên... (d) Khi cậu đến đây, mình sẽ dẫn cậu tới những nơi này... (b) Hãy kể cho mình nghe về khu vực của cậu ở thư sau nhé. Thân mến, Trang."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        pageNumber: 6,
+        pageTitle: "TRANG 6 (Tờ in số 6): Ex 8 (Câu 2, 3, 4) & Bài Nghe Ex 9 (10 câu)",
+        pageSummary: "Chuẩn tờ in số 6: Có số '6' in trên đầu ➔ Tiếp sắp xếp câu 2, 3, 4 ➔ Bài nghe trắc nghiệm bác Vinh (1-5) ➔ Bài nghe điền từ quản lý thời gian (1-5).",
+        sections: [
+            {
+                sectionTitle: "EXERCISE 8 (Tiếp theo Question 2, 3, 4 ở đầu Trang 6): Sắp Xếp Thư & Đoạn Văn",
+                sectionTip: "💡 Dấu hiệu cực nhạy: Tìm các từ nối thứ tự: The first thing / First / Firstly (số 1) ➔ Second / Secondly / Another thing (số 2) ➔ Third / Additionally (số 3) ➔ Finally / In short (cuối cùng)!",
+                questions: [
+                    {
+                        num: "Question 2",
+                        stem: "Sắp xếp email gửi Mark kể về những điều thích ở cộng đồng (a nằm ở cuối Trang 5; b, c, d, e ở đầu Trang 6):",
+                        options: [
+                            { letter: "A", text: "c - a - b - d - e" },
+                            { letter: "B", text: "b - a - e - c - d" },
+                            { letter: "C", text: "c - a - e - d - b" },
+                            { letter: "D", text: "b - e - d - a - c" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Câu (b) mở đầu 'I'm happy to have received your email...'; câu (e) 'The first thing I like... is my neighbours'; câu (d) kể kỷ niệm hàng xóm sang chào; câu (a) 'Another thing I like...'; câu (c) 'That's all for now, Mark. Cheers,'.",
+                        method: "Mở thư (b) ➔ Điều thứ nhất: hàng xóm thân thiện (e) ➔ Ví dụ cụ thể về hàng xóm (d) ➔ Điều thứ hai:Another thing (a) ➔ Kết thư (c).",
+                        reason: "Chọn D (b - e - d - a - c) mạch lạc tuyệt đối từ mở thư đến kết thư.",
+                        translation: "(b) Rất vui khi nhận được email của bạn... (e) Điều đầu tiên mình thích ở cộng đồng là hàng xóm... (d) Khi gia đình mình chuyển đến 3 năm trước, hàng xóm đã sang chào... (a) Một điều nữa mình thích là sự tiện lợi... (c) Tạm thời thế nhé Mark. Thân ái."
+                    },
+                    {
+                        num: "Question 3",
+                        stem: "Sắp xếp đoạn văn khuyên cách an toàn khi kết bạn chơi game online:",
+                        options: [
+                            { letter: "A", text: "a - b - e - c - d" },
+                            { letter: "B", text: "a - d - e - b - c" },
+                            { letter: "C", text: "e - d - a - c - b" },
+                            { letter: "D", text: "e - b - c - d - a" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy đã gạch D và khoanh C ➔ Sửa rất chuẩn!",
+                        sign: "Có bộ từ nối thứ tự siêu rõ: Mở đầu câu hỏi (e) 'What should you do?' ➔ (d) 'First,...' ➔ (a) 'Second,...' ➔ (c) 'Third,...' ➔ (b) 'In short,...' (Tóm lại).",
+                        method: "Xếp theo trục: Câu chủ đề (e) ➔ First (d) ➔ Second (a) ➔ Third (c) ➔ In short (b).",
+                        reason: "Chọn C (e - d - a - c - b) đúng 100% thứ tự liệt kê First - Second - Third - In short.",
+                        translation: "(e) Khi chơi game online, hãy cẩn thận khi kết bạn với người lạ. Bạn nên làm gì? (d) Thứ nhất, hãy nhớ trên mạng rất dễ nói dối... (a) Thứ hai, đừng bao giờ cung cấp thông tin cá nhân... (c) Thứ ba, chỉ chơi khi đã cập nhật phần mềm diệt virus... (b) Tóm lại, giống như ngoài đời thực, bạn cần cẩn trọng với người lạ."
+                    },
+                    {
+                        num: "Question 4",
+                        stem: "Sắp xếp đoạn văn về lợi ích của phương tiện giao thông công cộng (public transport):",
+                        options: [
+                            { letter: "A", text: "b - d - e - c - a" },
+                            { letter: "B", text: "e - b - a - d" },
+                            { letter: "C", text: "c - a - b - e - d" },
+                            { letter: "D", text: "b - e - a - d - c" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Câu chủ đề tổng quát (b) 'provides a range of benefits' ➔ (e) 'Firstly,...' ➔ (a) 'Secondly,...' ➔ (d) 'Additionally,...' ➔ (c) 'Finally,...'.",
+                        method: "Xếp theo trục: Câu mở đoạn (b) ➔ Firstly (e) ➔ Secondly (a) ➔ Additionally (d) ➔ Finally (c).",
+                        reason: "Chọn D (b - e - a - d - c) khớp hoàn hảo trình tự luận điểm.",
+                        translation: "(b) Giao thông công cộng mang lại nhiều lợi ích... (e) Thứ nhất, nó tiết kiệm chi phí... (a) Thứ hai, nó giúp giảm ùn tắc giao thông... (d) Thêm vào đó, nó thúc đẩy bảo vệ môi trường... (c) Cuối cùng, nó tăng cường sự hòa nhập xã hội cho người khuyết tật..."
+                    }
+                ]
+            },
+            {
+                sectionTitle: "EXERCISE 9 - Phần 1 (Trang 6): Nghe & Chọn Đáp Án A, B, C, D (Bài nghe Bác Vinh - Unit 1 Skills 2)",
+                sectionTip: "💡 ĐÂY LÀ BÀI NGHE TRONG SGK TIẾNG ANH 9 GLOBAL SUCCESS (Unit 1 - Trang 15): Bài viết của Mi dự thi về bác Vinh thu gom rác. Chú ý Câu 3 bác Vinh mặc đồng phục MÀU XANH LÁ (green uniform) chứ không phải màu cam nhé!",
+                questions: [
+                    {
+                        num: "Câu 1",
+                        stem: "What is the name of the writing contest?",
+                        options: [
+                            { letter: "A", text: "My favourite craftsman" },
+                            { letter: "B", text: "My favourite teacher" },
+                            { letter: "C", text: "My favourite celebrity" },
+                            { letter: "D", text: "My favourite community helper" }
+                        ],
+                        correct: "D",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh D ➔ Chính xác!",
+                        sign: "Trong bài nghe Mi nói: 'This is my essay for the writing contest My Favourite Community Helper.'",
+                        method: "Nghe bắt tên cuộc thi viết (writing contest) ở ngay câu đầu tiên của bài nghe Unit 1.",
+                        reason: "Chọn D ('My favourite community helper' = Người phục vụ cộng đồng yêu thích của tôi).",
+                        translation: "Tên của cuộc thi viết là gì? ➔ D. Người phục vụ cộng đồng yêu thích của tôi."
+                    },
+                    {
+                        num: "Câu 2",
+                        stem: "Mr Vinh is a ___.",
+                        options: [
+                            { letter: "A", text: "police officer" },
+                            { letter: "B", text: "firefighter" },
+                            { letter: "C", text: "garbage collector" },
+                            { letter: "D", text: "electrician" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chuẩn luôn!",
+                        sign: "Transcript SGK: 'I would like to write about Mr Vinh, the garbage collector in my neighbourhood.'",
+                        method: "Nghe nghề nghiệp của nhân vật Mr Vinh.",
+                        reason: "Chọn C ('garbage collector' = người thu gom rác).",
+                        translation: "Bác Vinh là một người thu gom rác."
+                    },
+                    {
+                        num: "Câu 3",
+                        stem: "Mr Vinh usually wears ___ with reflective stripes.",
+                        options: [
+                            { letter: "A", text: "an orange uniform" },
+                            { letter: "B", text: "a green uniform" },
+                            { letter: "C", text: "a yellow uniform" },
+                            { letter: "D", text: "a blue uniform" }
+                        ],
+                        correct: "B",
+                        warn: true,
+                        paperStatus: "⚠️ SỬA LỖI TRÊN GIẤY: Trên giấy khoanh A (orange) ➔ Trong bài nghe SGK chuẩn là B (a green uniform) nha!",
+                        sign: "Nguyên văn bài nghe SGK Unit 1 Skills 2: 'He is a tall and slim man. He usually wears a GREEN UNIFORM with reflective stripes.'",
+                        method: "Cẩn thận bẫy hình ảnh thực tế: Ngoài đời hay thấy áo cam/xanh, nhưng trong băng nghe SGK Tiếng Anh 9 đọc rõ là 'a green uniform' (bộ đồng phục màu xanh lá)!",
+                        reason: "Chọn B ('a green uniform') đúng 100% theo băng nghe của Bộ Giáo dục.",
+                        translation: "Bác Vinh thường mặc một bộ đồng phục màu xanh lá cây có các dải phản quang."
+                    },
+                    {
+                        num: "Câu 4",
+                        stem: "What time does he arrive at Mi's neighbourhood every day?",
+                        options: [
+                            { letter: "A", text: "6 p.m" },
+                            { letter: "B", text: "7 p.m" },
+                            { letter: "C", text: "8 p.m" },
+                            { letter: "D", text: "9 p.m" }
+                        ],
+                        correct: "A",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh A ➔ Chính xác!",
+                        sign: "Nguyên văn bài nghe: 'Every day he arrives at our neighbourhood at 6 p.m. with a grandesmile.'",
+                        method: "Nghe mốc thời gian đi kèm 'arrives at our neighbourhood'.",
+                        reason: "Chọn A ('6 p.m' = 6 giờ tối).",
+                        translation: "Hàng ngày bác ấy đến khu phố của Mi lúc mấy giờ? ➔ A. 6 giờ chiều/tối."
+                    },
+                    {
+                        num: "Câu 5",
+                        stem: "He shares information about his work and the importance of sorting ___.",
+                        options: [
+                            { letter: "A", text: "books" },
+                            { letter: "B", text: "food" },
+                            { letter: "C", text: "rubbish" },
+                            { letter: "D", text: "clothes" }
+                        ],
+                        correct: "C",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy khoanh C ➔ Chính xác!",
+                        sign: "Nguyên văn bài nghe: 'He also talks with the people in my community about his work and the importance of sorting rubbish.'",
+                        method: "Cụm từ vựng đi với nghề thu gom rác: sorting rubbish = phân loại rác thải.",
+                        reason: "Chọn C ('rubbish' = rác thải).",
+                        translation: "Bác ấy chia sẻ thông tin về công việc của mình và tầm quan trọng của việc phân loại rác."
+                    }
+                ]
+            },
+            {
+                sectionTitle: "EXERCISE 9 - Phần 2 (Cuối Trang 6): Nghe & Điền Từ Không Quá 2 Từ (Unit 3 Skills 2)",
+                sectionTip: "💡 ĐÂY LÀ BÀI NGHE TRONG SGK TIẾNG ANH 9 GLOBAL SUCCESS (Unit 3 - Trang 35): Trang, Phong và Tom kể cách quản lý thời gian. Sửa ngay Câu 2 và điền bổ sung Câu 5 nhé!",
+                questions: [
+                    {
+                        num: "Câu 1 (Điền từ)",
+                        stem: "Trang enters what she has to do into a _________ at the beginning of each term.",
+                        options: [
+                            { letter: "✓", text: "Đáp án điền: calendar" }
+                        ],
+                        correct: "✓",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy viết 'calendar' ➔ Chính xác!",
+                        sign: "Sau mạo từ 'a' cần một danh từ đếm được số ít chỉ công cụ lập lịch của Trang.",
+                        method: "Transcript SGK Unit 3: 'I use a calendar to plan my work ahead. At the beginning of each term, I take a broad view of what I have to do by entering the due dates and test dates into a calendar.'",
+                        reason: "Điền 'calendar' (lịch) hoàn toàn chính xác.",
+                        translation: "Trang nhập những việc cô ấy phải làm vào một cuốn lịch vào đầu mỗi học kỳ."
+                    },
+                    {
+                        num: "Câu 2 (Điền từ)",
+                        stem: "Trang often uses _________ to mark project due dates and exam times on her calendar.",
+                        options: [
+                            { letter: "✓", text: "Đáp án điền: different colours (hoặc colours)" }
+                        ],
+                        correct: "✓",
+                        warn: true,
+                        paperStatus: "⚠️ SỬA LỖI TRÊN GIẤY: Trên giấy ghi lặp lại 'calender' (sai) ➔ Sửa thành 'different colours' nha!",
+                        sign: "Cuối câu đã có sẵn 'on her calendar' rồi nên chỗ trống sau 'uses' không thể là 'calendar' nữa!",
+                        method: "Nguyên văn bài nghe SGK Unit 3: 'I often do these with DIFFERENT COLOURS, for example, red for deadlines, green for exams...'",
+                        reason: "Điền 'different colours' (các màu sắc khác nhau - đúng giới hạn không quá 2 từ).",
+                        translation: "Trang thường sử dụng các màu sắc khác nhau để đánh dấu hạn nộp dự án và lịch thi trên lịch của mình."
+                    },
+                    {
+                        num: "Câu 3 (Điền từ)",
+                        stem: "Phong _________ his cell phone and signs out of social media accounts when he starts his work.",
+                        options: [
+                            { letter: "✓", text: "Đáp án điền: turns off" }
+                        ],
+                        correct: "✓",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy viết 'turns off' ➔ Quá chuẩn!",
+                        sign: "Chủ ngữ số ít 'Phong' + song hành với động từ chia ngôi thứ 3 số ít 'signs out of' phía sau.",
+                        method: "Nguyên văn bài nghe SGK: 'I try to minimise distractions. Besides turning off my cell phone when I start my work, I also sign out of social media accounts...'",
+                        reason: "Điền 'turns off' (nhớ có chữ -s sau turn vì chủ ngữ là Phong!).",
+                        translation: "Phong tắt điện thoại di động và đăng xuất khỏi các tài khoản mạng xã hội khi bắt đầu làm việc."
+                    },
+                    {
+                        num: "Câu 4 (Điền từ)",
+                        stem: "Tom tries not to leave homework until just before the _________.",
+                        options: [
+                            { letter: "✓", text: "Đáp án điền: due date" }
+                        ],
+                        correct: "✓",
+                        warn: false,
+                        paperStatus: "✅ Trên giấy viết 'due date' ➔ Chính xác!",
+                        sign: "Sau mạo từ 'the' cuối câu cần một danh từ chỉ hạn chót nộp bài.",
+                        method: "Nguyên văn bài nghe SGK: 'I never leave homework until the day before it's due / the due date.'",
+                        reason: "Điền 'due date' (hạn chót nộp bài) đúng chuẩn bài tập số 3 trong SGK trang 35.",
+                        translation: "Tom cố gắng không để bài tập về nhà tồn đọng đến tận sát ngày hết hạn nộp."
+                    },
+                    {
+                        num: "Câu 5 (Điền từ)",
+                        stem: "Tom _________ his projects and coming tests and adds them to his schedule.",
+                        options: [
+                            { letter: "✓", text: "Đáp án điền: reviews" }
+                        ],
+                        correct: "✓",
+                        warn: true,
+                        paperStatus: "⚠️ BỔ SUNG TRÊN GIẤY: Trên giấy đang bỏ trống câu 5 ➔ Điền từ 'reviews' (có chữ s) vào nhé!",
+                        sign: "Chủ ngữ số ít 'Tom' + phía sau có 'and adds them to his schedule' (cần 1 động từ thêm -s).",
+                        method: "Nguyên văn bài nghe SGK Unit 3: 'On Sunday, I review my projects and coming tests and add them to my schedule.'",
+                        reason: "Đổi ngôi từ 'I review' sang chủ ngữ 'Tom' ➔ điền 'reviews' (xem lại / rà soát lại).",
+                        translation: "Tom rà soát lại các dự án và bài kiểm tra sắp tới của mình rồi thêm chúng vào lịch trình."
+                    }
+                ]
+            }
+        ]
+    }
+];
+
+function renderContent() {
+    const main = document.getElementById('mainContent');
+    let html = '';
+
+    PAGES_DATA.forEach(page => {
+        page.sections.forEach(sec => {
+            let qHtml = '';
+            sec.questions.forEach(q => {
+                let optsHtml = '';
+                q.options.forEach(opt => {
+                    const isCorrect = opt.letter === q.correct;
+                    optsHtml += `
+                        <div class="opt-item ${isCorrect ? 'correct' : ''}">
+                            <span class="opt-letter">${opt.letter}</span>
+                            <span>${opt.text}</span>
+                        </div>
+                    `;
+                });
+
+                qHtml += `
+                    <div class="q-card">
+                        <div class="q-top">
+                            <span class="q-num">${q.num}</span>
+                        </div>
+                        <div class="q-stem">${q.stem}</div>
+                        <div class="options-grid">${optsHtml}</div>
+                        <div class="explain-grid">
+                            <div class="exp-box sign">
+                                <span class="exp-label">🔍 Dấu hiệu nhận biết</span>
+                                ${q.sign}
+                            </div>
+                            <div class="exp-box method">
+                                <span class="exp-label">🛠️ Biện pháp / Công thức</span>
+                                ${q.method}
+                            </div>
+                            <div class="exp-box reason">
+                                <span class="exp-label">🟢 Lý do chọn đáp án (${q.correct})</span>
+                                ${q.reason}
+                            </div>
+                            <div class="exp-box trans">
+                                <span class="exp-label">🇻🇳 Dịch ý nghĩa</span>
+                                ${q.translation}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `
+                <div class="section-block">
+                    <div class="section-header">
+                        <div class="section-title">${sec.sectionTitle}</div>
+                        <div class="section-tip">${sec.sectionTip}</div>
+                    </div>
+                    <div class="questions-list">${qHtml}</div>
+                </div>
+            `;
+        });
+    });
+
+    main.innerHTML = html;
+}
+
+// Khởi chạy ngay lập tức khi mở trang
+renderContent();
+</script>
+</body>
+</html>
