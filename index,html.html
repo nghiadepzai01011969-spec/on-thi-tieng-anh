@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đề Cương Ôn Tập Giữa Kì 1 - Lịch Sử (Bài 2, 3, 4, 5)</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --paper: #1e293b;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --border: #334155;
+    --green: #22c55e;
+    --green-bg: rgba(34, 197, 94, 0.22);
+    --red: #ef4444;
+    --red-bg: rgba(239, 68, 68, 0.2);
+    --gold: #f59e0b;
+    --blue: #38bdf8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    padding-bottom: 70px;
+  }
+
+  /* Thanh điều khiển cố định trên cùng */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 23, 42, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--green);
+    padding: 10px 14px;
+  }
+  .topbar-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .doc-title {
+    font-weight: 900;
+    font-size: 1.05rem;
+    color: #fff;
+    letter-spacing: 0.3px;
+  }
+  .doc-title span { color: var(--green); }
+
+  .controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn {
+    border: 1px solid var(--border);
+    background: var(--paper);
+    color: var(--text);
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .btn:hover { border-color: var(--green); }
+  .btn.active-green {
+    background: var(--green);
+    color: #052e16;
+    border-color: var(--green);
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.45);
+  }
+  .btn.active-gold {
+    background: var(--gold);
+    color: #0f172a;
+    border-color: var(--gold);
+  }
+
+  .container {
+    max-width: 920px;
+    margin: 18px auto;
+    padding: 0 14px;
+  }
+
+  /* Tiêu đề Đề cương chuẩn trường học */
+  .exam-header {
+    background: var(--paper);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .exam-header h1 {
+    font-size: 1.35rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .exam-header p {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  /* Dòng cảnh báo đầu trang */
+  .warning-banner {
+    background: rgba(245, 158, 11, 0.15);
+    border: 2px solid var(--gold);
+    color: #fef08a;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+  }
+  .warning-banner span.warn-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  /* Thanh lọc nhanh theo bài */
+  .filter-bar {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .filter-chip {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .filter-chip.active {
+    background: var(--blue);
+    color: #0f172a;
+    border-color: var(--blue);
+  }
+
+  /* Tiêu đề phần I, II La Mã */
+  .roman-title {
+    background: linear-gradient(90deg, #16a34a 0%, #1e293b 100%);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    font-weight: 900;
+    margin: 24px 0 14px;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Khối câu hỏi Trắc nghiệm */
+  .q-item {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .q-question {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .q-question .q-label {
+    color: var(--gold);
+    margin-right: 4px;
+  }
+  .q-options {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .opt-btn {
+    width: 100%;
+    text-align: left;
+    background: #0f172a;
+    border: 1.5px solid var(--border);
+    color: #e2e8f0;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-size: 0.94rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .opt-btn:hover {
+    border-color: #64748b;
+    transform: translateX(3px);
+  }
+  .opt-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .opt-letter {
+    font-weight: 800;
+    color: var(--gold);
+    min-width: 22px;
+  }
+
+  /* HIỆU ỨNG ĐỘNG KHI CHỌN TRÚNG ĐÁP ÁN MÀU XANH */
+  @keyframes greenPop {
+    0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.8); }
+    50% { transform: scale(1.015); box-shadow: 0 0 18px 4px rgba(34, 197, 94, 0.55); }
+    100% { transform: scale(1); box-shadow: 0 0 8px 0 rgba(34, 197, 94, 0.25); }
+  }
+  @keyframes checkBounce {
+    0% { transform: scale(0) rotate(-30deg); opacity: 0; }
+    70% { transform: scale(1.3) rotate(10deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+  @keyframes wrongShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
+
+  .opt-btn.is-correct {
+    background: var(--green-bg) !important;
+    border: 2px solid var(--green) !important;
+    color: #bbf7d0 !important;
+    font-weight: 700;
+    animation: greenPop 0.4s ease-out forwards;
+  }
+  .opt-btn.is-correct .opt-letter {
+    color: var(--green) !important;
+  }
+  .check-icon {
+    display: none;
+    background: var(--green);
+    color: #052e16;
+    font-weight: 900;
+    font-size: 0.78rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    animation: checkBounce 0.35s ease-out forwards;
+    white-space: nowrap;
+    margin-left: 8px;
+  }
+  .opt-btn.is-correct .check-icon {
+    display: inline-block;
+  }
+
+  .opt-btn.is-wrong {
+    background: var(--red-bg) !important;
+    border: 2px solid var(--red) !important;
+    color: #fecaca !important;
+    animation: wrongShake 0.3s ease;
+  }
+
+  /* PHẦN II: TỰ LUẬN + HOẠT ẢNH + MẸO HỌC THUỘC */
+  .essay-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 16px;
+  }
+  .essay-q {
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 12px;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 8px;
+  }
+  .essay-body {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 16px;
+    align-items: center;
+  }
+  @media (max-width: 700px) {
+    .essay-body { grid-template-columns: 1fr; }
+  }
+  .essay-ans ul {
+    padding-left: 18px;
+    color: #e2e8f0;
+    font-size: 0.94rem;
+  }
+  .essay-ans li { margin-bottom: 6px; }
+  .hl { color: #fde047; font-weight: 700; }
+  .hl-green { color: #4ade80; font-weight: 700; }
+
+  /* Khung hoạt ảnh minh họa trong phần Tự luận */
+  .essay-anim-box {
+    background: #0f172a;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+  }
+  .anim-svg {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 6px;
+    display: block;
+    animation: floatAnim 2.6s ease-in-out infinite;
+  }
+  @keyframes floatAnim {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-6px) scale(1.06); }
+  }
+  .anim-caption {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--blue);
+  }
+
+  /* Hộp mẹo học thuộc ở Tự luận */
+  .memory-box {
+    margin-top: 12px;
+    background: rgba(34, 197, 94, 0.12);
+    border-left: 4px solid var(--green);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    color: #dcfce7;
+  }
+  .memory-box strong { color: var(--green); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="doc-title">📄 ĐỀ CƯƠNG ÔN TẬP GIỮA KÌ 1 <span>• LỊCH SỬ</span></div>
+    <div class="controls">
+      <button id="btnAutoGreen" class="btn" onclick="toggleStudyMode(true)">👀 Hiện sẵn đáp án Xanh</button>
+      <button id="btnClickMode" class="btn active-green" onclick="toggleStudyMode(false)">👆 Tự bấm chọn (Bấm vào hiện màu Xanh)</button>
+      <button class="btn" onclick="resetChoices()">🔄 Làm lại</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="warning-banner">
+    <span class="warn-icon">⚠️</span>
+    <div>
+      <strong>LƯU Ý QUAN TRỌNG:</strong> Do không có đề thi/đề cương cho trước, câu hỏi và thứ tự đáp án có thể không trùng khớp 100% với đề thi ngày mai, nhưng toàn bộ kiến thức dưới đây là <strong>bản tổng hợp đầy đủ nhất từ Bài 2 tới Bài 5</strong> trong tập của bạn!
+    </div>
+  </div>
+
+  <div class="exam-header">
+    <h1>ĐỀ CƯƠNG ÔN TẬP GIỮA KÌ 1 - MÔN LỊCH SỬ</h1>
+    <p>Phạm vi: Bài 2, Bài 3, Bài 4, Bài 5 (Bám sát 100% nội dung ghi chép trong tập)</p>
+  </div>
+
+  <!-- Bộ lọc bài -->
+  <div class="filter-bar">
+    <button class="filter-chip active" onclick="filterByLesson('all', this)">Tất cả đề cương (Bài 2 → Bài 5)</button>
+    <button class="filter-chip" onclick="filterByLesson('bai2', this)">Bài 2: Châu Âu & Nước Mỹ</button>
+    <button class="filter-chip" onclick="filterByLesson('bai3', this)">Bài 3: Châu Á (1918-1945)</button>
+    <button class="filter-chip" onclick="filterByLesson('bai4', this)">Bài 4: Chiến tranh thế giới thứ 2</button>
+    <button class="filter-chip" onclick="filterByLesson('bai5', this)">Bài 5: Việt Nam (1918-1930)</button>
+  </div>
+
+  <!-- ==================== I. TRẮC NGHIỆM ==================== -->
+  <div class="roman-title">
+    <span>I. TRẮC NGHIỆM KHÁCH QUAN (48 CÂU)</span>
+    <span id="progressText" style="font-size:0.85rem; font-weight:700;">Đã chọn: 0/48</span>
+  </div>
+
+  <div id="mcqList"></div>
+
+  <!-- ==================== II. TỰ LUẬN (CÓ HOẠT ẢNH & MẸO HỌC THUỘC) ==================== -->
+  <div class="roman-title" style="background: linear-gradient(90deg, #d97706 0%, #1e293b 100%);">
+    <span>II. TỰ LUẬN TRỌNG TÂM & MẸO HỌC THUỘC NHANH (8 CÂU)</span>
+    <span style="font-size:0.82rem;">Có hoạt ảnh & mẹo nhớ</span>
+  </div>
+
+  <div id="essayList">
+
+    <!-- Câu Tự luận 1 (Bài 2) -->
+    <div class="essay-card" data-lesson="bai2">
+      <div class="essay-q">Câu 1 (Bài 2): Trình bày nguyên nhân, biểu hiện của cuộc đại suy thoái kinh tế (1929 - 1933) và cách ứng phó của các nước tư bản?</div>
+      <div class="essay-body">
+        <div class="essay-ans">
+          <ul>
+            <li><strong>Nguyên nhân:</strong> Trong những năm 1924 - 1929, kinh tế tư bản phát triển mạnh, <span class="hl">sản xuất tăng ồ ạt</span> nhưng nhu cầu và sức mua của thị trường không tăng tương ứng → làm cho <span class="hl-green">hàng hóa trở nên ế thừa</span> dẫn tới suy thoái trong sản xuất.</li>
+            <li><strong>Biểu hiện:</strong> Bùng nổ vào <span class="hl">tháng 10/1929 ở Mỹ</span> (bắt đầu từ lĩnh vực tài chính), sau đó lan rộng ra toàn thế giới tư bản trên tất cả các lĩnh vực. Kéo dài gần 4 năm, <span class="hl-green">trầm trọng nhất là năm 1932</span>.</li>
+            <li><strong>Cách ứng phó của các nước:</strong>
+              <br>+ <strong>Anh, Pháp,...:</strong> Có <span class="hl">nhiều thuộc địa, vốn và thị trường</span> nên tiến hành những cuộc <span class="hl-green">cải cách kinh tế - xã hội</span>.
+              <br>+ <strong>Đức, I-ta-li-a, Nhật Bản:</strong> Không có hoặc có <span class="hl">ít thuộc địa</span>, thiếu vốn, thiếu nguyên liệu, thị trường nên đi theo con đường <span class="hl-green">phát xít hóa</span>, thiết lập chế độ độc tài, phát động chiến tranh phân chia lại thế giới.
+            </li>
+          </ul>
+        </div>
+        <div class="essay-anim-box">
+          <svg class="anim-svg" viewBox="0 0 64 64" fill="none">
+            <rect x="8" y="10" width="20" height="20" fill="#f59e0b" rx="3"/>
+            <rect x="36" y="10" width="20" height="20" fill="#f59e0b" rx="3"/>
+            <polyline points="8,38 28,44 56,56" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="56" cy="56" r="5" fill="#ef4444"/>
+          </svg>
+          <div class="anim-caption">Hàng hóa ế thừa (10/1929)<br>Chia 2 ngả: Cải cách vs Phát xít</div>
+        </div>
+      </div>
+      <div class="memory-box">
+        💡 <strong>MẸO HỌC THUỘC CÂU 1:</strong> Nhớ công thức 3 bước: <strong>"Làm ồ ạt → Hàng ế thừa → Mỹ nổ 10/1929 (đỉnh 1932)"</strong>. Cách thoát: <strong>"Giàu thuộc địa (Anh, Pháp) thì CẢI CÁCH — Nghèo thuộc địa (Đức, Ý, Nhật) thì PHÁT XÍT"</strong>.
+      </div>
+    </div>
+
+    <!-- Câu Tự luận 2 (Bài 2) -->
+    <div class="essay-card" data-lesson="bai2">
+      <div class="essay-q">Câu 2 (Bài 2): Nêu nội dung và tác dụng của "Chính sách mới" cũng như chính sách đối ngoại của Tổng thống Ph. Ru-dơ-ven ở Mỹ (từ năm 1933)?</div>
+      <div class="essay-body">
+        <div class="essay-ans">
+          <ul>
+            <li><strong>Bối cảnh:</strong> Tháng 10/1929, đại suy thoái bùng nổ ở Mỹ từ <span class="hl">lĩnh vực tài chính</span> rồi lan sang các ngành khác.</li>
+            <li><strong>Nội dung "Chính sách mới" (Ph. Ru-dơ-ven):</strong> Thực hiện các biện pháp nhằm <span class="hl-green">giải quyết nạn thất nghiệp</span>, phục hồi sự phát triển của các ngành kinh tế - tài chính, <span class="hl-green">cải tổ hệ thống ngân hàng</span>, tạo thêm nhiều việc làm mới và ổn định tình hình xã hội.</li>
+            <li><strong>Tác dụng:</strong> <span class="hl">Cứu nguy cho chủ nghĩa tư bản Mỹ</span>, góp phần làm cho nước Mỹ <span class="hl-green">duy trì được chế độ dân chủ tư sản</span>, chính trị - xã hội dần ổn định.</li>
+            <li><strong>Về đối ngoại (từ năm 1933):</strong> Công nhận và <span class="hl">đặt quan hệ ngoại giao với Liên Xô</span>; thực hiện chính sách <span class="hl-green">"láng giềng thân thiện"</span> đối với các nước Mỹ La-tinh (thay cho học thuyết Mơn-rô trước đó).</li>
+          </ul>
+        </div>
+        <div class="essay-anim-box">
+          <svg class="anim-svg" viewBox="0 0 64 64" fill="none">
+            <path d="M32 6 L54 16 V32 C54 46 32 58 32 58 C32 58 10 46 10 32 V16 L32 6 Z" fill="#16a34a" stroke="#bbf7d0" stroke-width="2"/>
+            <path d="M22 32 L29 39 L44 24" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+          <div class="anim-caption">Khiên "Chính sách mới"<br>Cứu nguy CNTB Mỹ (1933)</div>
+        </div>
+      </div>
+      <div class="memory-box">
+        💡 <strong>MẸO HỌC THUỘC CÂU 3:</strong> Nhớ trục thời gian xâm lược của Nhật: <strong>"1927 Tấu trình Ta-na-ca → 9/1931 Đông Bắc TQ (Lò lửa) → 7/1937 Toàn TQ → 9/1940 Đông Dương → 12/1941 Trân Châu cảng → 15/8/1945 Đầu hàng"</strong>.
+      </div>
+    </div>
+
+    <!-- Câu Tự luận 3 (Bài 3) -->
+    <div class="essay-card" data-lesson="bai3">
+      <div class="essay-q">Câu 3 (Bài 3): Vì sao Nhật Bản tiến hành quân sự hóa bộ máy nhà nước trong những năm 1933 - 1939? Nêu các cuộc xâm lược của Nhật Bản từ 1931 đến 1945?</div>
+      <div class="essay-body">
+        <div class="essay-ans">
+          <ul>
+            <li><strong>Nguyên nhân quân sự hóa:</strong> Cuộc đại suy thoái (1929 - 1933) giáng đòn nặng nề vào kinh tế Nhật Bản (năm 1931 công nghiệp giảm <span class="hl">32,5%</span>, ngoại thương giảm <span class="hl">80%</span>, <span class="hl">3 triệu</span> người thất nghiệp, gần <span class="hl">1.000</span> cuộc bãi công). Để thoát khỏi đại suy thoái, Chính phủ Nhật tăng cường <span class="hl-green">quân sự hóa bộ máy nhà nước</span>, gây chiến tranh xâm lược, bành trướng ra bên ngoài.</li>
+            <li><strong>Quá trình xâm lược bành trướng:</strong>
+              <br>+ Ngay từ năm <span class="hl">1927</span>, Thủ tướng <span class="hl">Ta-na-ca</span> đệ trình bản Tấu trình đề ra kế hoạch xâm lược và thống trị thế giới.
+              <br>+ <span class="hl-green">Tháng 9/1931:</span> Xâm chiếm vùng <span class="hl">Đông Bắc Trung Quốc</span>, đánh dấu hình thành <strong>"lò lửa chiến tranh"</strong> ở châu Á - Thái Bình Dương.
+              <br>+ <span class="hl">Tháng 7/1937:</span> Mở rộng chiến tranh thôn tính toàn bộ Trung Quốc.
+              <br>+ <span class="hl">Tháng 9/1940:</span> Kéo vào Đông Dương. <span class="hl">Tháng 12/1941:</span> Tấn công hạm đội Mỹ ở Trân Châu cảng, xâm lược Đông Nam Á. Ngày <span class="hl-green">15/8/1945</span> đầu hàng không điều kiện.
+            </li>
+          </ul>
+        </div>
+        <div class="essay-anim-box">
+          <svg class="anim-svg" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="36" r="18" fill="#ef4444"/>
+            <path d="M32 8 C22 20 18 28 32 42 C46 28 42 20 32 8 Z" fill="#f59e0b"/>
+          </svg>
+          <div class="anim-caption">Tháng 9/1931: Đông Bắc TQ<br>"Lò lửa chiến tranh" Châu Á</div>
+        </div>
+      </div>
+      <div class="memory-box">
+        💡 <strong>MẸO HỌC THUỘC CÂU 3:</strong> Nhớ trục thời gian xâm lược của Nhật: <strong>"1927 Tấu trình Ta-na-ca $\rightarrow$ 9/1931 Đông Bắc TQ (Lò lửa) $\rightarrow$ 7/1937 Toàn TQ $\rightarrow$ 9/1940 Đông Dương $\rightarrow$ 12/1941 Trân Châu cảng $\rightarrow$ 15/8/1945 Đầu hàng"</strong>.
+      </div>
+    </div>
+
+    <!-- Câu Tự luận 4 (Bài 3) -->
+    <div class="essay-card" data-lesson="bai3">
+      <div class="essay-q">Câu 4 (Bài 3): Khái quát phong trào đấu tranh giành độc lập dân tộc ở châu Á và Đông Nam Á (1918 - 1945)?</div>
+      <div class="essay-body">
+        <div class="essay-ans">
+          <ul>
+            <li><strong>Hai khuynh hướng chính ở châu Á:</strong>
+              <br>+ Khuynh hướng <span class="hl-green">dân chủ tư sản</span>: Tiêu biểu là <span class="hl">Ấn Độ, In-đô-nê-xi-a</span>,... (Ở Ấn Độ có Đảng Quốc đại do <span class="hl">M. Gan-di</span> đứng đầu, tẩy chay hàng Anh).
+              <br>+ Khuynh hướng <span class="hl-green">vô sản</span>: Tiêu biểu là <span class="hl">Trung Quốc, Việt Nam</span>,... (Ở Trung Quốc có phong trào Ngũ Tứ 4/5/1919, lập ĐCS TQ 7/1921).
+            </li>
+            <li><strong>Ở Đông Nam Á (1919 - 1939):</strong>
+              <br>+ <em>Phong trào vô sản:</em> Khởi nghĩa tại <span class="hl">Gia-va và Xu-ma-tơ-ra (1926 - 1927)</span> ở In-đô-nê-xi-a; cao trào <span class="hl">Xô viết Nghệ - Tĩnh (1930 - 1931)</span> ở Việt Nam.
+              <br>+ <em>Phong trào dân chủ tư sản:</em> Ra đời <span class="hl">Đảng Dân tộc</span> (In-đô-nê-xi-a), <span class="hl">Phong trào Tha-kin</span> (Miến Điện), <span class="hl">Liên minh Thanh niên Ma-lay-a</span> (Mã Lai).
+            </li>
+            <li><strong>Giai đoạn 1940 - 1945:</strong> Năm 1945, lợi dụng thời cơ Nhật đầu hàng Đồng minh, một số nước ĐNÁ đã giành được độc lập.</li>
+          </ul>
+        </div>
+        <div class="essay-anim-box">
+          <svg class="anim-svg" viewBox="0 0 64 64" fill="none">
+            <path d="M12 48 L28 16 L40 36 L52 20" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="28" cy="16" r="5" fill="#fde047"/>
+            <circle cx="52" cy="20" r="5" fill="#22c55e"/>
+          </svg>
+          <div class="anim-caption">2 Ngọn cờ Châu Á:<br>Dân chủ tư sản & Vô sản</div>
+        </div>
+      </div>
+      <div class="memory-box">
+        💡 <strong>MẸO HỌC THUỘC CÂU 4:</strong> Nhớ cặp đối xứng: <strong>"Tư sản = Ấn + In | Vô sản = Trung + Việt"</strong>. Ở Đông Nam Á: <strong>"Vô sản nổi dậy ở Gia-va (In-đô) & Nghệ-Tĩnh (VN) | Tư sản lập đảng Tha-kin (Miến Điện) & Ma-lay-a (Mã Lai)"</strong>.
+      </div>
+    </div>
+
+    <!-- Câu Tự luận 5 (Bài 4) -->
+    <div class="essay-card" data-lesson="bai4">
+      <div class="essay-q">Câu 5 (Bài 4): Trình bày nguyên nhân dẫn tới Chiến tranh thế giới thứ hai (1939 - 1945) và các mốc diễn biến chính?</div>
+      <div class="essay-body">
+        <div class="essay-ans">
+          <ul>
+            <li><strong>Nguyên nhân:</strong>
+              <br>+ Mâu thuẫn về <span class="hl">thị trường và thuộc địa</span> tiếp tục nảy sinh sau CTTG 1.
+              <br>+ Đại suy thoái 1929 - 1933 dẫn tới hình thành chủ nghĩa phát xít ở <span class="hl">Đức, Nhật Bản, I-ta-li-a</span> (thủ phạm gây chiến).
+              <br>+ Hình thành 2 khối đế quốc đối địch: <span class="hl">khối tư bản dân chủ (Anh, Pháp, Mỹ)</span> và <span class="hl">khối phát xít (Đức, Ý, Nhật)</span>. Cả hai đều coi Liên Xô là kẻ thù nguy hiểm nhất.
+              <br>+ Anh, Pháp, Mỹ thực hiện chính sách <span class="hl-green">nhượng bộ phát xít</span> nhằm đẩy Đức chống Liên Xô.
+            </li>
+            <li><strong>Các mốc diễn biến chính:</strong>
+              <br>+ <strong>Giai đoạn I (1/9/1939 - 11/1942):</strong> <span class="hl">1/9/1939</span> Đức tấn công Ba Lan (3/9 Anh, Pháp tuyên chiến) → CTTG 2 bắt đầu; <span class="hl">22/6/1941</span> Đức đánh Liên Xô; <span class="hl">12/1941</span> Nhật đánh Trân Châu cảng (Mỹ); <span class="hl">1/1942</span> lập Mặt trận Đồng minh (Liên Xô, Mỹ, Anh).
+              <br>+ <strong>Giai đoạn II (11/1942 - 8/1945):</strong> <span class="hl-green">11/1942 - 2/1943</span> Liên Xô thắng trận <span class="hl-green">Xta-lin-grát</span> (tạo <strong>bước ngoặt</strong> chuyển từ phòng ngự sang phản công); <span class="hl">6/1944</span> đổ bộ Noóc-măng-đi (mở mặt trận thứ 2 ở Tây Âu); <span class="hl-green">9/5/1945</span> Đức đầu hàng; <span class="hl">6 và 9/8/1945</span> Mỹ ném bom nguyên tử xuống Nhật; <span class="hl">8/8/1945</span> Liên Xô đánh Nhật ở Đông Bắc TQ; <span class="hl-green">15/8/1945</span> Nhật đầu hàng → CTTG 2 kết thúc.
+            </li>
+          </ul>
+        </div>
+        <div class="essay-anim-box">
+          <svg class="anim-svg" viewBox="0 0 64 64" fill="none">
+            <polygon points="32,6 40,24 58,24 44,36 50,54 32,42 14,54 20,36 6,24 24,24" fill="#ef4444" stroke="#fde047" stroke-width="2"/>
+          </svg>
+          <div class="anim-caption">Bước ngoặt Xta-lin-grát<br>(11/1942 - 2/1943)</div>
+        </div>
+      </div>
+      <div class="memory-box">
+        💡 <strong>MẸO HỌC THUỘC CÂU 5:</strong> Nhớ câu thần chú 7 mốc: <strong>"39 Ba Lan → 41 Liên Xô & Trân Châu → 42 Đồng minh → 43 Xta-lin-grát (Bước ngoặt) → 44 Noóc-măng-đi → Tháng 5 Đức hàng → Tháng 8 Nhật hàng"</strong>.
+      </div>
+    </div>
+
+    <!-- Câu Tự luận 6 (Bài 4) -->
+    <div class="essay-card" data-lesson="bai4">
+      <div class="essay-q">Câu 6 (Bài 4): Nêu hậu quả, nguyên nhân thắng lợi, ý nghĩa lịch sử và vai trò của Liên Xô trong Chiến tranh thế giới thứ hai?</div>
+      <div class="essay-body">
+        <div class="essay-ans">
+          <ul>
+            <li><strong>Hậu quả nặng nề:</strong> Chủ nghĩa phát xít sụp đổ hoàn toàn. <span class="hl">76</span> nước tham chiến, <span class="hl">110 triệu</span> người nhập ngũ, <span class="hl-green">60 triệu người chết</span>, <span class="hl-green">90 triệu người bị thương</span>, thiệt hại vật chất <span class="hl">4.000 tỉ USD</span>, chi phí quân sự trực tiếp <span class="hl">1.384 tỉ USD</span>.</li>
+            <li><strong>Nguyên nhân thắng lợi:</strong> Phe phát xít là chiến tranh <span class="hl">phi nghĩa</span>, phe Đồng minh và các dân tộc bị chiếm đóng là chiến tranh <span class="hl-green">chính nghĩa</span>; sự đoàn kết kiên cường của nhân loại tiến bộ và tinh thần chiến đấu của Hồng quân Liên Xô.</li>
+            <li><strong>Ý nghĩa lịch sử:</strong> Giúp nhân loại thoát khỏi thảm họa phát xít; dẫn tới sự ra đời của <span class="hl-green">hệ thống các nước xã hội chủ nghĩa</span>; tương quan giữa các nước TBCN thay đổi; tạo điều kiện cho phong trào giải phóng dân tộc phát triển.</li>
+            <li><strong>Vai trò của Liên Xô và Đồng minh:</strong> Liên Xô, Mỹ, Anh là ba trụ cột quyết định thắng lợi, trong đó <span class="hl-green">Liên Xô có vai trò quyết định nhất</span>.</li>
+          </ul>
+        </div>
+        <div class="essay-anim-box">
+          <svg class="anim-svg" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="24" stroke="#22c55e" stroke-width="4"/>
+            <path d="M18 32 H46 M32 18 V46" stroke="#38bdf8" stroke-width="3"/>
+          </svg>
+          <div class="anim-caption">Liên Xô giữ vai trò<br>QUYẾT ĐỊNH NHẤT</div>
+        </div>
+      </div>
+      <div class="memory-box">
+        💡 <strong>MẸO HỌC THUỘC CÂU 6:</strong> Nhớ dãy số hậu quả: <strong>"76 nước - 110 lính - 60 chết - 90 thương - 4.000 tỉ"</strong>. Vai trò: <strong>"3 trụ cột Xô - Mỹ - Anh, nhưng LIÊN XÔ quyết định nhất"</strong>.
+      </div>
+    </div>
+
+    <!-- Câu Tự luận 7 (Bài 5) -->
+    <div class="essay-card" data-lesson="bai5">
+      <div class="essay-q">Câu 7 (Bài 5): So sánh hoạt động đấu tranh của giai cấp tư sản và tầng lớp tiểu tư sản ở Việt Nam trong những năm 1918 - 1930?</div>
+      <div class="essay-body">
+        <div class="essay-ans">
+          <ul>
+            <li><strong>Phong trào của giai cấp tư sản:</strong>
+              <br>+ <em>Mục tiêu:</em> Chống sự cạnh tranh, chèn ép của tư sản Hoa kiều và tư sản Pháp; đòi một số quyền tự do, dân chủ, tham gia bộ máy chính quyền.
+              <br>+ <em>Hoạt động tiêu biểu:</em> <span class="hl-green">Tẩy chay tư sản Hoa kiều</span>, vận động người Việt dùng hàng Việt (<span class="hl">1919</span>); <span class="hl-green">Chống độc quyền cảng Sài Gòn</span> (<span class="hl">1923</span>); thành lập <span class="hl">Đảng Lập hiến</span> tại Sài Gòn (1923); lập các tờ báo: <em>Thực nghiệp dân báo, Diễn đàn bản xứ, Tiếng vang An Nam</em>.
+            </li>
+            <li><strong>Phong trào của tầng lớp tiểu tư sản:</strong>
+              <br>+ <em>Mục tiêu:</em> Tuyên truyền tư tưởng dân tộc, dân chủ, thức tỉnh và cổ vũ tinh thần yêu nước.
+              <br>+ <em>Hoạt động tiêu biểu:</em> Lập nhà xuất bản tiến bộ (<em>Cường học thư xã, Quan hải tùng thư, Nam Đồng thư xã</em>); ra báo (<em>Chuông rạn, An Nam trẻ</em>); lập tổ chức sơ khai (<em>Hội Phục Việt, Đảng Thanh niên,...</em>); đấu tranh đòi thả <span class="hl-green">Phan Bội Châu (1925)</span>, <span class="hl">Nguyễn An Ninh (1926)</span>, tổ chức đám tang <span class="hl-green">Phan Châu Trinh (1926)</span>.
+            </li>
+          </ul>
+        </div>
+        <div class="essay-anim-box">
+          <svg class="anim-svg" viewBox="0 0 64 64" fill="none">
+            <rect x="10" y="14" width="44" height="36" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="3"/>
+            <line x1="18" y1="26" x2="46" y2="26" stroke="#fde047" stroke-width="3"/>
+            <line x1="18" y1="36" x2="38" y2="36" stroke="#22c55e" stroke-width="3"/>
+          </svg>
+          <div class="anim-caption">Tư sản: Kinh tế & Đảng Lập hiến<br>Tiểu tư sản: Báo chí & Biểu tình</div>
+        </div>
+      </div>
+      <div class="memory-box">
+        💡 <strong>MẸO HỌC THUỘC CÂU 7:</strong> 
+        <br>• <strong>Tư sản</strong> gắn với tiền bạc/buôn bán: <strong>"Hoa kiều (1919) - Cảng Sài Gòn (1923) - Đảng Lập hiến - Thực nghiệp/Diễn đàn/Tiếng vang"</strong>.
+        <br>• <strong>Tiểu tư sản</strong> gắn với sách báo/trí thức: <strong>"Thư xã - Chuông rạn/An Nam trẻ - Thả cụ Bội Châu (1925) - Tang cụ Châu Trinh (1926)"</strong>.
+      </div>
+    </div>
+
+    <!-- Câu Tự luận 8 (Bài 5) -->
+    <div class="essay-card" data-lesson="bai5">
+      <div class="essay-q">Câu 8 (Bài 5): Trình bày sự phát triển của phong trào công nhân Việt Nam (1919 - 1930) và sự ra đời của 3 tổ chức yêu nước cách mạng (1925 - 1928)?</div>
+      <div class="essay-body">
+        <div class="essay-ans">
+          <ul>
+            <li><strong>Phong trào công nhân:</strong>
+              <br>+ <em>Giai đoạn 1919 - 1925:</em> Đấu tranh đòi tăng lương, giảm giờ làm, bắt đầu dùng hình thức bãi công (mang tính tự phát).
+              <br>+ <em>Giai đoạn 1925 - 1930:</em> <span class="hl-green">Tháng 8/1925</span>, cuộc bãi công của <span class="hl-green">công nhân Ba Son (Sài Gòn)</span> thắng lợi, đánh dấu bước chuyển từ đấu tranh <strong>"tự phát" sang "tự giác"</strong>. Từ 1926, đấu tranh có tổ chức, liên kết nhiều ngành, kết hợp mục tiêu kinh tế với chính trị (tiêu biểu: mỏ than <span class="hl">Mạo Khê</span>, xe lửa <span class="hl">Trường Thi</span>, ô tô <span class="hl">A-vi-a</span>, cao su <span class="hl">Phú Riềng</span>).
+            </li>
+            <li><strong>Sự ra đời của 3 tổ chức cách mạng:</strong>
+              <br>1. <span class="hl-green">Hội Việt Nam Cách mạng Thanh niên (tháng 6/1925):</span> Do <span class="hl">Nguyễn Ái Quốc</span> thành lập tại Quảng Châu (Trung Quốc) từ hạt nhân là tổ chức <span class="hl">Tâm tâm xã</span>.
+              <br>2. <span class="hl-green">Việt Nam Quốc dân Đảng (tháng 12/1927):</span> Hạt nhân là <span class="hl">Nam Đồng thư xã</span> (Nguyễn Thái Học, Phó Đức Chính).
+              <br>3. <span class="hl-green">Tân Việt Cách mạng Đảng (tháng 7/1928):</span> Tiền thân là <span class="hl">Hội Phục Việt</span>.
+            </li>
+          </ul>
+        </div>
+        <div class="essay-anim-box">
+          <svg class="anim-svg" viewBox="0 0 64 64" fill="none">
+            <path d="M10 44 L18 28 H46 L54 44 H10 Z" fill="#22c55e"/>
+            <rect x="24" y="16" width="16" height="12" fill="#fde047"/>
+          </svg>
+          <div class="anim-caption">Ba Son (8/1925): Tự phát → Tự giác<br>& 3 Tổ chức CM (1925-1928)</div>
+        </div>
+      </div>
+      <div class="memory-box">
+        💡 <strong>MẸO HỌC THUỘC CÂU 8:</strong> 
+        <br>• Công nhân: <strong>"Ba Son 8/1925 = Tự phát sang Tự giác | Mạo Khê - Trường Thi - A-vi-a - Phú Riềng"</strong>.
+        <br>• 3 Tổ chức nhớ theo cặp gốc: <strong>"Thanh niên (6/1925) gốc Tâm tâm xã — Quốc dân Đảng (12/1927) gốc Nam Đồng — Tân Việt (7/1928) gốc Phục Việt"</strong>.
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+const mcqData = [
+  // ==================== BÀI 2 (12 CÂU) ====================
+  {
+    id: 1, lesson: 'bai2',
+    q: 'Hai yếu tố bên ngoài và bối cảnh lịch sử nào đã dẫn đến phong trào cách mạng (1918 - 1923) bùng nổ ở hầu khắp các nước tư bản châu Âu?',
+    opts: [
+      'Cuộc đại suy thoái kinh tế thế giới và sự xuất hiện chủ nghĩa phát xít.',
+      'Hậu quả nặng nề của Chiến tranh thế giới thứ nhất và tác động của Cách mạng tháng Mười Nga năm 1917.',
+      'Chính sách mới của Tổng thống Mỹ Ph. Ru-dơ-ven và sự ra đời của Liên Hợp Quốc.',
+      'Sự sụp đổ của hệ thống thuộc địa Anh, Pháp và thắng lợi của Hồng quân Liên Xô.'
+    ],
+    ans: 1
+  },
+  {
+    id: 2, lesson: 'bai2',
+    q: 'Ngày 9/11/1918, công nhân và các tầng lớp nhân dân ở Béc-lin (Đức) nổi dậy đấu tranh đã đạt được kết quả gì và chính quyền sau đó thuộc về ai?',
+    opts: [
+      'Lật đổ chế độ quân chủ, nhưng sau đó chính quyền rơi vào tay giai cấp tư sản.',
+      'Lật đổ giai cấp tư sản, thiết lập ngay nhà nước chuyên chính vô sản trên toàn nước Đức.',
+      'Đưa Đảng Cộng sản Đức lên cầm quyền liên tục từ năm 1918 đến năm 1933.',
+      'Buộc phát xít Đức phải ký văn kiện đầu hàng quân Đồng minh không điều kiện.'
+    ],
+    ans: 0
+  },
+  {
+    id: 3, lesson: 'bai2',
+    q: 'Đảng Cộng sản Đức được thành lập vào thời gian nào?',
+    opts: [
+      'Tháng 11 năm 1917.',
+      'Tháng 12 năm 1918.',
+      'Tháng 3 năm 1919.',
+      'Tháng 5 năm 1920.'
+    ],
+    ans: 1
+  },
+  {
+    id: 4, lesson: 'bai2',
+    q: 'Trong phong trào cách mạng 1918 - 1923 ở châu Âu, con số 6,5 triệu người bãi công (từ năm 1919 đến năm 1921) diễn ra tại quốc gia nào?',
+    opts: [
+      'Ở Pháp.',
+      'Ở Đức.',
+      'Ở Anh.',
+      'Ở I-ta-li-a.'
+    ],
+    ans: 2
+  },
+  {
+    id: 5, lesson: 'bai2',
+    q: 'Ở Pháp, cuộc tổng bãi công lớn nhất nổ ra nhân ngày Quốc tế Lao động (1/5/1920) đã lôi cuốn bao nhiêu người tham gia?',
+    opts: [
+      'Khoảng 276 nghìn người tham gia.',
+      'Hơn 1 triệu người tham gia.',
+      'Khoảng 3 triệu người tham gia.',
+      'Tới 6,5 triệu người tham gia.'
+    ],
+    ans: 1
+  },
+  {
+    id: 6, lesson: 'bai2',
+    q: 'Qua phong trào cách mạng 1918 - 1923 ở châu Âu, nhiều Đảng Cộng sản đã được thành lập theo đúng mốc thời gian nào dưới đây?',
+    opts: [
+      'ĐCS Hung-ga-ri (1918), ĐCS Anh (8/1920), ĐCS Pháp (12/1920), ĐCS I-ta-li-a (1/1921).',
+      'ĐCS Anh (1918), ĐCS Pháp (1919), ĐCS Hung-ga-ri (1920), ĐCS I-ta-li-a (1922).',
+      'ĐCS I-ta-li-a (1918), ĐCS Đức (1920), ĐCS Pháp (1921), ĐCS Anh (1923).',
+      'ĐCS Pháp (1918), ĐCS Anh (1919), ĐCS Đức (1920), ĐCS Hung-ga-ri (1921).'
+    ],
+    ans: 0
+  },
+  {
+    id: 7, lesson: 'bai2',
+    q: 'Quốc tế Cộng sản (còn gọi là Quốc tế thứ ba) được thành lập vào tháng 3/1919 tại đâu và gắn với hoạt động tích cực của ai?',
+    opts: [
+      'Tại Pa-ri (Pháp), gắn với hoạt động của Phan Châu Trinh.',
+      'Tại Mát-xcơ-va (Nga), gắn với hoạt động tích cực của V.I. Lê-nin và Đảng Bôn-sê-vích Nga.',
+      'Tại Béc-lin (Đức), gắn với hoạt động của giai cấp công nhân Đức.',
+      'Tại Oa-sinh-tơn (Mỹ), gắn với hoạt động của Tổng thống Ph. Ru-dơ-ven.'
+    ],
+    ans: 1
+  },
+  {
+    id: 8, lesson: 'bai2',
+    q: 'Trong thời gian tồn tại (1919 - 1943), Quốc tế Cộng sản đã tiến hành mấy kì đại hội và tự giải tán vào năm nào?',
+    opts: [
+      'Tiến hành 5 kì đại hội, tự giải tán năm 1939.',
+      'Tiến hành 7 kì đại hội, tự giải tán năm 1943.',
+      'Tiến hành 9 kì đại hội, tự giải tán năm 1945.',
+      'Tiến hành 10 kì đại hội, tự giải tán năm 1941.'
+    ],
+    ans: 1
+  },
+  {
+    id: 9, lesson: 'bai2',
+    q: 'Nguyên nhân dẫn đến cuộc đại suy thoái kinh tế (1929 - 1933) ở các nước tư bản chủ nghĩa là gì?',
+    opts: [
+      'Do sản xuất ồ ạt trong những năm 1924 - 1929 nhưng nhu cầu và sức mua không tăng tương ứng, làm hàng hóa ế thừa.',
+      'Do chiến tranh thế giới thứ hai bùng nổ làm toàn bộ nhà máy ở Mỹ và châu Âu bị phá hủy.',
+      'Do các nước tư bản thiếu hụt hàng hóa nghiêm trọng không đủ cung cấp cho thị trường.',
+      'Do Liên Xô áp đặt lệnh cấm vận thương mại đối với toàn bộ các nước tư bản châu Âu.'
+    ],
+    ans: 0
+  },
+  {
+    id: 10, lesson: 'bai2',
+    q: 'Cuộc đại suy thoái kinh tế (1929 - 1933) bùng nổ vào tháng 10/1929 tại đâu, bắt đầu từ lĩnh vực nào và trầm trọng nhất vào năm nào?',
+    opts: [
+      'Bùng nổ ở Anh, bắt đầu từ lĩnh vực công nghiệp, trầm trọng nhất năm 1931.',
+      'Bùng nổ ở Mỹ, bắt đầu từ lĩnh vực tài chính, trầm trọng nhất năm 1932.',
+      'Bùng nổ ở Đức, bắt đầu từ lĩnh vực nông nghiệp, trầm trọng nhất năm 1933.',
+      'Bùng nổ ở Nhật Bản, bắt đầu từ lĩnh vực thương nghiệp, trầm trọng nhất năm 1930.'
+    ],
+    ans: 1
+  },
+  {
+    id: 11, lesson: 'bai2',
+    q: 'Trong những năm 20 của thế kỉ XX, đảng nào liên tục nắm chính quyền ở Mỹ và thực hiện học thuyết gì đối với khu vực Mỹ La-tinh?',
+    opts: [
+      'Đảng Dân chủ nắm quyền, thực hiện chính sách "láng giềng thân thiện".',
+      'Đảng Cộng hòa nắm quyền, tiếp tục thực hiện học thuyết Mơn-rô (châu Mỹ của người châu Mỹ).',
+      'Đảng Lao động nắm quyền, thực hiện chính sách viện trợ quân sự cho Liên Xô.',
+      'Đảng Cộng sản Mỹ nắm quyền, xóa bỏ quyền tư hữu của giai cấp tư sản.'
+    ],
+    ans: 1
+  },
+  {
+    id: 12, lesson: 'bai2',
+    q: 'Từ năm 1933, Chính phủ của Tổng thống Mỹ Ph. Ru-dơ-ven đã thực hiện chính sách đối nội và đối ngoại nổi bật nào?',
+    opts: [
+      'Thực hiện "Chính sách mới" để cứu nguy CNTB Mỹ; đặt quan hệ ngoại giao với Liên Xô và thực hiện chính sách "láng giềng thân thiện" với Mỹ La-tinh.',
+      'Thực hiện phát xít hóa bộ máy nhà nước; cắt đứt quan hệ ngoại giao với Liên Xô và xâm lược Mỹ La-tinh.',
+      'Thực hiện học thuyết Mơn-rô; đàn áp phong trào công nhân và giải tán Quốc hội Mỹ.',
+      'Bãi bỏ chế độ dân chủ tư sản; liên minh quân sự với Đức, I-ta-li-a và Nhật Bản.'
+    ],
+    ans: 0
+  },
+
+  // ==================== BÀI 3 (12 CÂU) ====================
+  {
+    id: 13, lesson: 'bai3',
+    q: 'Nhờ hưởng lợi từ Chiến tranh thế giới thứ nhất, nền kinh tế Nhật Bản phát triển nhanh chóng sau chiến tranh nhưng chỉ kéo dài trong bao lâu?',
+    opts: [
+      'Chỉ kéo dài trong 12 tháng.',
+      'Chỉ kéo dài trong 18 tháng.',
+      'Chỉ kéo dài trong 24 tháng.',
+      'Chỉ kéo dài trong 36 tháng.'
+    ],
+    ans: 1
+  },
+  {
+    id: 14, lesson: 'bai3',
+    q: 'Đảng Cộng sản Nhật Bản được thành lập vào thời gian nào để trở thành lực lượng lãnh đạo phong trào công nhân?',
+    opts: [
+      'Tháng 7 năm 1921.',
+      'Tháng 7 năm 1922.',
+      'Tháng 9 năm 1931.',
+      'Tháng 7 năm 1937.'
+    ],
+    ans: 1
+  },
+  {
+    id: 15, lesson: 'bai3',
+    q: 'Từ năm 1927, sự kiện nào đã làm cho nền kinh tế Nhật Bản lâm vào khủng hoảng, suy thoái (trước cả đại suy thoái 1929)?',
+    opts: [
+      'Cuộc khủng hoảng tài chính ở Tô-ki-ô.',
+      'Thất bại trong cuộc tấn công Trân Châu cảng.',
+      'Sự sụp đổ của thị trường chứng khoán Luân Đôn.',
+      'Phong trào tẩy chay hàng hóa Nhật Bản ở Ấn Độ.'
+    ],
+    ans: 0
+  },
+  {
+    id: 16, lesson: 'bai3',
+    q: 'Dưới tác động của cuộc đại suy thoái kinh tế, năm 1931 (so với năm 1929), nền kinh tế - xã hội Nhật Bản chịu hậu quả như thế nào?',
+    opts: [
+      'Sản lượng công nghiệp giảm 32,5%, ngoại thương giảm 80%, khoảng 3 triệu người thất nghiệp, gần 1.000 cuộc bãi công.',
+      'Sản lượng công nghiệp giảm 80%, ngoại thương giảm 32,5%, có 276 cuộc bãi công.',
+      'Sản lượng nông nghiệp giảm 50%, có 6,5 triệu người thất nghiệp.',
+      'Ngoại thương tăng 32,5% nhưng có hơn 1 triệu công nhân bãi công.'
+    ],
+    ans: 0
+  },
+  {
+    id: 17, lesson: 'bai3',
+    q: 'Ngay từ năm 1927, ai đã đệ trình lên Nhật hoàng bản Tấu trình đề ra kế hoạch xâm lược và thống trị thế giới?',
+    opts: [
+      'Thủ tướng Ta-na-ca.',
+      'Lãnh tụ M. Gan-di.',
+      'Toàn quyền Méc-lanh.',
+      'Tổng thống Ph. Ru-dơ-ven.'
+    ],
+    ans: 0
+  },
+  {
+    id: 18, lesson: 'bai3',
+    q: 'Sự kiện nào vào tháng 9/1931 đã đánh dấu việc hình thành "lò lửa chiến tranh" ở châu Á - Thái Bình Dương?',
+    opts: [
+      'Quân Nhật kéo vào Đông Dương.',
+      'Nhật Bản xâm chiếm vùng Đông Bắc Trung Quốc.',
+      'Nhật Bản bất ngờ tấn công hạm đội Mỹ ở Trân Châu cảng.',
+      'Nhật Bản mở rộng chiến tranh thôn tính toàn bộ Trung Quốc.'
+    ],
+    ans: 1
+  },
+  {
+    id: 19, lesson: 'bai3',
+    q: 'Trong giai đoạn 1939 - 1945, quân phiệt Nhật Bản đã kéo vào Đông Dương và tấn công hạm đội Mỹ ở Trân Châu cảng vào những thời gian nào?',
+    opts: [
+      'Vào Đông Dương tháng 9/1939; tấn công Trân Châu cảng tháng 6/1941.',
+      'Vào Đông Dương tháng 9/1940; tấn công Trân Châu cảng tháng 12/1941.',
+      'Vào Đông Dương tháng 12/1941; tấn công Trân Châu cảng tháng 8/1945.',
+      'Vào Đông Dương tháng 9/1931; tấn công Trân Châu cảng tháng 7/1937.'
+    ],
+    ans: 1
+  },
+  {
+    id: 20, lesson: 'bai3',
+    q: 'Phong trào đấu tranh giành độc lập ở châu Á (1918 - 1945) diễn ra theo hai khuynh hướng chính nào (với các nước tiêu biểu tương ứng)?',
+    opts: [
+      'Khuynh hướng dân chủ tư sản (Ấn Độ, In-đô-nê-xi-a,...) và khuynh hướng vô sản (Trung Quốc, Việt Nam,...).',
+      'Khuynh hướng vô sản (Ấn Độ, Thổ Nhĩ Kỳ,...) và khuynh hướng dân chủ tư sản (Trung Quốc, Việt Nam,...).',
+      'Khuynh hướng phong kiến (Mông Cổ, Ấn Độ,...) và khuynh hướng phát xít (Nhật Bản, Trung Quốc,...).',
+      'Khuynh hướng cải cách (Việt Nam, Mã Lai,...) và khuynh hướng quân phiệt (Nhật Bản, Miến Điện,...).'
+    ],
+    ans: 0
+  },
+  {
+    id: 21, lesson: 'bai3',
+    q: 'Ở Ấn Độ, nhân dân đấu tranh đòi quyền độc lập, tẩy chay hàng hóa của Anh và phát triển kinh tế dân tộc dưới sự lãnh đạo của tổ chức và cá nhân nào?',
+    opts: [
+      'Đảng Dân tộc, đứng đầu là Xô-các-nô.',
+      'Đảng Quốc đại, đứng đầu là M. Gan-di.',
+      'Đảng Lập hiến, đứng đầu là Bùi Quang Chiêu.',
+      'Phong trào Tha-kin, đứng đầu là Ta-na-ca.'
+    ],
+    ans: 1
+  },
+  {
+    id: 22, lesson: 'bai3',
+    q: 'Phong trào giải phóng dân tộc ở Mông Cổ (1921 - 1924) và cuộc chiến tranh giải phóng dân tộc ở Thổ Nhĩ Kỳ (1919 - 1922) đã đưa đến kết quả lịch sử gì?',
+    opts: [
+      'Đưa đến sự ra đời của nước Cộng hòa Nhân dân Mông Cổ và sự thành lập nước Cộng hòa Thổ Nhĩ Kỳ.',
+      'Sáp nhập lãnh thổ Mông Cổ và Thổ Nhĩ Kỳ vào Liên bang Cộng hòa xã hội chủ nghĩa Xô viết.',
+      'Thiết lập chế độ quân chủ chuyên chế dưới sự bảo hộ của đế quốc Anh.',
+      'Buộc phát xít Nhật Bản phải bồi thường chiến phí và rút quân khỏi Tây Á.'
+    ],
+    ans: 0
+  },
+  {
+    id: 23, lesson: 'bai3',
+    q: 'Ở Trung Quốc, phong trào Ngũ Tứ nổ ra ở Bắc Kinh vào ngày nào và Đảng Cộng sản Trung Quốc được thành lập vào thời gian nào?',
+    opts: [
+      'Phong trào Ngũ Tứ ngày 4/5/1919; Đảng Cộng sản Trung Quốc thành lập tháng 7/1921.',
+      'Phong trào Ngũ Tứ ngày 1/5/1920; Đảng Cộng sản Trung Quốc thành lập tháng 7/1922.',
+      'Phong trào Ngũ Tứ ngày 9/11/1918; Đảng Cộng sản Trung Quốc thành lập tháng 3/1919.',
+      'Phong trào Ngũ Tứ ngày 4/5/1921; Đảng Cộng sản Trung Quốc thành lập tháng 7/1927.'
+    ],
+    ans: 0
+  },
+  {
+    id: 24, lesson: 'bai3',
+    q: 'Ở Đông Nam Á (1919 - 1939), hai cuộc đấu tranh tiêu biểu dưới sự lãnh đạo của Đảng Cộng sản và ba tổ chức tiêu biểu theo khuynh hướng dân chủ tư sản là gì?',
+    opts: [
+      'Vô sản: khởi nghĩa Gia-va, Xu-ma-tơ-ra (1926-1927 ở In-đô-nê-xi-a) và Xô viết Nghệ-Tĩnh (1930-1931 ở VN) | Dân chủ tư sản: Đảng Dân tộc (In-đô-nê-xi-a), Phong trào Tha-kin (Miến Điện), Liên minh Thanh niên Ma-lay-a (Mã Lai).',
+      'Vô sản: Phong trào Tha-kin và Liên minh Thanh niên Ma-lay-a | Dân chủ tư sản: khởi nghĩa Gia-va, Xu-ma-tơ-ra và Xô viết Nghệ-Tĩnh.',
+      'Vô sản: Đảng Quốc đại và Đảng Lập hiến | Dân chủ tư sản: Tâm tâm xã và Hội Phục Việt.',
+      'Vô sản: Phong trào Ngũ Tứ và bãi công Ba Son | Dân chủ tư sản: Đảng Cộng sản In-đô-nê-xi-a và Đảng Cộng sản Mã Lai.'
+    ],
+    ans: 0
+  },
+  {
+    id: 23, lesson: 'bai3',
+    q: 'Ở Trung Quốc, phong trào Ngũ Tứ nổ ra ở Bắc Kinh vào ngày nào và Đảng Cộng sản Trung Quốc được thành lập vào thời gian nào?',
+    opts: [
+      'Phong trào Ngũ Tứ ngày 4/5/1919; Đảng Cộng sản Trung Quốc thành lập tháng 7/1921.',
+      'Phong trào Ngũ Tứ ngày 1/5/1920; Đảng Cộng sản Trung Quốc thành lập tháng 7/1922.',
+      'Phong trào Ngũ Tứ ngày 9/11/1918; Đảng Cộng sản Trung Quốc thành lập tháng 3/1919.',
+      'Phong trào Ngũ Tứ ngày 4/5/1921; Đảng Cộng sản Trung Quốc thành lập tháng 7/1927.'
+    ],
+    ans: 0
+  },
+  {
+    id: 24, lesson: 'bai3',
+    q: 'Ở Đông Nam Á (1919 - 1939), hai cuộc đấu tranh tiêu biểu dưới sự lãnh đạo của Đảng Cộng sản và ba tổ chức tiêu biểu theo khuynh hướng dân chủ tư sản là gì?',
+    opts: [
+      'Vô sản: khởi nghĩa Gia-va, Xu-ma-tơ-ra (1926-1927 ở In-đô-nê-xi-a) và Xô viết Nghệ-Tĩnh (1930-1931 ở VN) | Dân chủ tư sản: Đảng Dân tộc (In-đô-nê-xi-a), Phong trào Tha-kin (Miến Điện), Liên minh Thanh niên Ma-lay-a (Mã Lai).',
+      'Vô sản: Phong trào Tha-kin và Liên minh Thanh niên Ma-lay-a | Dân chủ tư sản: khởi nghĩa Gia-va, Xu-ma-tơ-ra và Xô viết Nghệ-Tĩnh.',
+      'Vô sản: Đảng Quốc đại và Đảng Lập hiến | Dân chủ tư sản: Tâm tâm xã và Hội Phục Việt.',
+      'Vô sản: Phong trào Ngũ Tứ và bãi công Ba Son | Dân chủ tư sản: Đảng Cộng sản Ин-đô-nê-xi-a và Đảng Cộng sản Mã Lai.'
+    ],
+    ans: 0
+  },
+
+  // ==================== BÀI 4 (12 CÂU) ====================
+  {
+    id: 25, lesson: 'bai4',
+    q: 'Trước khi Chiến tranh thế giới thứ hai bùng nổ, hai khối đế quốc đối địch nhau được hình thành trên thế giới là:',
+    opts: [
+      'Khối các nước tư bản dân chủ (Anh, Pháp, Mỹ) và khối phát xít (Đức, I-ta-li-a, Nhật Bản).',
+      'Khối Hiệp ước (Anh, Pháp, Nga) và khối Liên minh (Đức, Áo - Hung, I-ta-li-a).',
+      'Khối xã hội chủ nghĩa (Liên Xô, Mông Cổ) và khối phát xít (Đức, Anh, Pháp).',
+      'Khối Bắc Đại Tây Dương (Mỹ, Anh) và khối Đông Nam Á (Nhật Bản, Trung Quốc).'
+    ],
+    ans: 0
+  },
+  {
+    id: 26, lesson: 'bai4',
+    q: 'Chính phủ các nước Anh, Pháp, Mỹ đã thực hiện chính sách gì đối với khối phát xít, tạo điều kiện cho phát xít phát động Chiến tranh thế giới thứ hai?',
+    opts: [
+      'Chính sách bao vây kinh tế và tấn công phủ đầu phát xít Đức.',
+      'Chính sách nhượng bộ phát xít nhằm đẩy Đức chống Liên Xô.',
+      'Chính sách liên minh toàn diện với Liên Xô ngay từ năm 1933.',
+      'Chính sách giải giáp toàn bộ quân đội của Đức, I-ta-li-a và Nhật Bản.'
+    ],
+    ans: 1
+  },
+  {
+    id: 27, lesson: 'bai4',
+    q: 'Chiến tranh thế giới thứ hai bắt đầu bằng sự kiện nào vào ngày 1/9/1939 và ngày 3/9/1939?',
+    opts: [
+      'Ngày 1/9/1939 quân đội Đức tấn công Ba Lan; ngày 3/9/1939 Anh, Pháp tuyên chiến với Đức.',
+      'Ngày 1/9/1939 quân đội Đức tấn công Liên Xô; ngày 3/9/1939 Mỹ tuyên chiến với Đức.',
+      'Ngày 1/9/1939 Nhật tấn công Trân Châu cảng; ngày 3/9/1939 Anh, Pháp đầu hàng Đức.',
+      'Ngày 1/9/1939 Đức đánh chiếm nước Pháp; ngày 3/9/1939 Liên Xô giải phóng Ba Lan.'
+    ],
+    ans: 0
+  },
+  {
+    id: 28, lesson: 'bai4',
+    q: 'Quân Đức tấn công Liên Xô dọc tuyến biên giới phía tây vào ngày nào và quân Nhật tấn công căn cứ Trân Châu cảng của Mỹ vào thời gian nào?',
+    opts: [
+      'Đức tấn công Liên Xô ngày 1/9/1939; Nhật tấn công Trân Châu cảng tháng 9/1940.',
+      'Đức tấn công Liên Xô ngày 22/6/1941; Nhật tấn công Trân Châu cảng tháng 12/1941.',
+      'Đức tấn công Liên Xô ngày 16/4/1945; Nhật tấn công Trân Châu cảng tháng 8/1945.',
+      'Đức tấn công Liên Xô ngày 9/5/1941; Nhật tấn công Trân Châu cảng tháng 6/1944.'
+    ],
+    ans: 1
+  },
+  {
+    id: 29, lesson: 'bai4',
+    q: 'Tháng 1/1942, Mặt trận Đồng minh chống phát xít được thành lập với ba trụ cột là:',
+    opts: [
+      'Anh, Pháp, Mỹ.',
+      'Liên Xô, Mỹ, Anh.',
+      'Liên Xô, Pháp, Trung Quốc.',
+      'Đức, I-ta-li-a, Nhật Bản.'
+    ],
+    ans: 1
+  },
+  {
+    id: 30, lesson: 'bai4',
+    q: 'Chiến thắng nào của Hồng quân Liên Xô (từ tháng 11/1942 đến tháng 2/1943) đã tạo nên bước ngoặt của Chiến tranh thế giới thứ hai (chuyển từ phòng ngự sang phản công)?',
+    opts: [
+      'Chiến thắng tại thành phố Mát-xcơ-va.',
+      'Chiến thắng tại thành phố Xta-lin-grát.',
+      'Chiến dịch công phá Béc-lin.',
+      'Chiến dịch đổ bộ vào Noóc-măng-đi.'
+    ],
+    ans: 1
+  },
+  {
+    id: 31, lesson: 'bai4',
+    q: 'Tháng 6/1944, liên quân Mỹ, Anh và Đồng minh đã mở mặt trận thứ hai ở Tây Âu, giải phóng nước Pháp bằng cuộc đổ bộ vào đâu?',
+    opts: [
+      'Đổ bộ vào thành phố Xta-lin-grát.',
+      'Đổ bộ vào Noóc-măng-đi (Bắc Pháp).',
+      'Đổ bộ vào Thủ đô Béc-lin (Đức).',
+      'Đổ bộ vào Trân Châu cảng (Thái Bình Dương).'
+    ],
+    ans: 1
+  },
+  {
+    id: 32, lesson: 'bai4',
+    q: 'Hồng quân Liên Xô mở chiến dịch công phá Béc-lin vào ngày nào và Đức ký văn kiện đầu hàng Đồng minh không điều kiện (kết thúc chiến tranh ở châu Âu) vào ngày nào?',
+    opts: [
+      'Công phá Béc-lin ngày 16/4/1945; Đức đầu hàng ngày 9/5/1945.',
+      'Công phá Béc-lin ngày 1/9/1944; Đức đầu hàng ngày 30/4/1945.',
+      'Công phá Béc-lin ngày 9/5/1945; Đức đầu hàng ngày 15/8/1945.',
+      'Công phá Béc-lin ngày 6/6/1944; Đức đầu hàng ngày 2/9/1945.'
+    ],
+    ans: 0
+  },
+  {
+    id: 33, lesson: 'bai4',
+    q: 'Diễn biến trong tháng 8/1945 dẫn đến việc Nhật Bản đầu hàng và kết thúc Chiến tranh thế giới thứ hai diễn ra theo đúng trình tự nào?',
+    opts: [
+      'Ngày 6 và 9/8 Mỹ ném 2 quả bom nguyên tử xuống Hi-rô-si-ma và Na-ga-sa-ki; ngày 8/8 Hồng quân Liên Xô tấn công quân Nhật ở Đông Bắc Trung Quốc; ngày 15/8/1945 Nhật Bản đầu hàng không điều kiện.',
+      'Ngày 1/8 Liên Xô ném bom nguyên tử xuống Tô-ki-ô; ngày 9/8 Mỹ đổ bộ vào Đông Bắc Trung Quốc; ngày 30/8 Nhật Bản đầu hàng.',
+      'Ngày 6/8 Nhật tấn công Trân Châu cảng; ngày 8/8 Đức đầu hàng ở Béc-lin; ngày 15/8 Mỹ ký hòa ước với Nhật.',
+      'Ngày 8/8 Anh và Pháp giải phóng Đông Bắc Trung Quốc; ngày 15/8 Liên Xô ném bom nguyên tử xuống Na-ga-sa-ki.'
+    ],
+    ans: 0
+  },
+  {
+    id: 34, lesson: 'bai4',
+    q: 'Những con số nào phản ánh đúng hậu quả nặng nề của Chiến tranh thế giới thứ hai đối với nhân loại?',
+    opts: [
+      '76 nước tham chiến, 110 triệu người nhập ngũ, 60 triệu người chết, 90 triệu người bị thương, thiệt hại vật chất 4.000 tỉ USD, chi phí quân sự trực tiếp 1.384 tỉ USD.',
+      '50 nước tham chiến, 60 triệu người nhập ngũ, 30 triệu người chết, 45 triệu người bị thương, thiệt hại vật chất 1.384 tỉ USD.',
+      '110 nước tham chiến, 76 triệu người nhập ngũ, 90 triệu người chết, 60 triệu người bị thương, thiệt hại vật chất 2.000 tỉ USD.',
+      '36 nước tham chiến, 50 triệu người nhập ngũ, 10 triệu người chết, 20 triệu người bị thương, thiệt hại vật chất 400 tỉ USD.'
+    ],
+    ans: 0
+  },
+  {
+    id: 35, lesson: 'bai4',
+    q: 'Tính chất của Chiến tranh thế giới thứ hai đối với phe phát xít và đối với phe Đồng minh là gì?',
+    opts: [
+      'Cả hai phe đều tiến hành cuộc chiến tranh đế quốc phi nghĩa nhằm phân chia thuộc địa.',
+      'Là cuộc chiến tranh phi nghĩa do phe phát xít gây ra, còn là cuộc chiến tranh chính nghĩa của phe Đồng minh và các dân tộc bị phát xít chiếm đóng.',
+      'Là cuộc chiến tranh chính nghĩa của phe phát xít và phi nghĩa của phe Đồng minh.',
+      'Cả hai phe đều tiến hành cuộc chiến tranh chính nghĩa bảo vệ hòa bình thế giới.'
+    ],
+    ans: 1
+  },
+  {
+    id: 36, lesson: 'bai4',
+    q: 'Trong ba cường quốc trụ cột của lực lượng Đồng minh (Liên Xô, Mỹ, Anh), quốc gia nào giữ vai trò quyết định nhất trong thắng lợi chống chủ nghĩa phát xít?',
+    opts: [
+      'Nước Mỹ.',
+      'Nước Anh.',
+      'Liên Xô.',
+      'Nước Pháp.'
+    ],
+    ans: 2
+  },
+
+  // ==================== BÀI 5 (12 CÂU) ====================
+  {
+    id: 37, lesson: 'bai5',
+    q: 'Năm 1923, tại Quảng Châu (Trung Quốc), tổ chức yêu nước nào được thành lập với chủ trương "khôi phục quyền làm người của người Việt Nam" và gây tiếng vang với vụ mưu sát Toàn quyền Méc-lanh tại Sa Diện (1924)?',
+    opts: [
+      'Hội những người yêu nước Việt Nam tại Pháp.',
+      'Tổ chức Tâm tâm xã.',
+      'Đảng Lập hiến.',
+      'Nam Đồng thư xã.'
+    ],
+    ans: 1
+  },
+  {
+    id: 38, lesson: 'bai5',
+    q: 'Tại Pháp năm 1919, ai đã cùng một số người Việt Nam sáng lập "Hội những người yêu nước Việt Nam tại Pháp" và viết nhiều tác phẩm lên án chế độ quân chủ trong nước?',
+    opts: [
+      'Phan Bội Châu.',
+      'Phan Châu Trinh.',
+      'Nguyễn Thái Học.',
+      'Phó Đức Chính.'
+    ],
+    ans: 1
+  },
+  {
+    id: 39, lesson: 'bai5',
+    q: 'Các phong trào đấu tranh tiêu biểu của giai cấp tư sản Việt Nam trong những năm 1919 - 1923 bao gồm:',
+    opts: [
+      'Tẩy chay tư sản Hoa kiều, vận động người Việt dùng hàng Việt (1919); chống độc quyền cảng Sài Gòn của tư sản Pháp (1923); thành lập Đảng Lập hiến tại Sài Gòn (1923).',
+      'Thành lập Nam Đồng thư xã, Cường học thư xã; đòi thả Phan Bội Châu (1925) và tổ chức đám tang Phan Châu Trinh (1926).',
+      'Bãi công tại xưởng đóng tàu Ba Son (1925), mỏ than Mạo Khê và đồn điền cao su Phú Riềng.',
+      'Mưu sát Toàn quyền Méc-lanh tại Sa Diện (1924) và thành lập Tân Việt Cách mạng Đảng (1928).'
+    ],
+    ans: 0
+  },
+  {
+    id: 40, lesson: 'bai5',
+    q: 'Một số tư sản và đại địa chủ Việt Nam đã lập ra những tờ báo nào để làm công cụ tuyên truyền và đòi quyền lợi cho mình?',
+    opts: [
+      'Chuông rạn, An Nam trẻ.',
+      'Thực nghiệp dân báo, Diễn đàn bản xứ, Tiếng vang An Nam.',
+      'Cường học thư xã, Quan hải tùng thư, Nam Đồng thư xã.',
+      'Thanh niên, Nhân dân, Cứu quốc.'
+    ],
+    ans: 1
+  },
+  {
+    id: 41, lesson: 'bai5',
+    q: 'Trong phong trào yêu nước của tầng lớp tiểu tư sản Việt Nam, những nhà xuất bản tiến bộ và những tờ báo tiêu biểu nào đã ra đời?',
+    opts: [
+      'Nhà xuất bản: Cường học thư xã, Quan hải tùng thư, Nam Đồng thư xã | Báo: Chuông rạn, An Nam trẻ.',
+      'Nhà xuất bản: Đảng Lập hiến, Tâm tâm xã | Báo: Thực nghiệp dân báo, Diễn đàn bản xứ, Tiếng vang An Nam.',
+      'Nhà xuất bản: Ba Son, Trường Thi, Phú Riềng | Báo: Tiếng vang An Nam, Thực nghiệp dân báo.',
+      'Nhà xuất bản: Hội Phục Việt, Việt Nam nghĩa đoàn | Báo: Diễn đàn bản xứ.'
+    ],
+    ans: 0
+  },
+  {
+    id: 42, lesson: 'bai5',
+    q: 'Những tổ chức chính trị sơ khai nào đã ra đời làm nòng cốt trong phong trào yêu nước của tầng lớp tiểu tư sản Việt Nam?',
+    opts: [
+      'Đảng Lập hiến, Quốc dân Đảng Trung Quốc, Đảng Quốc đại.',
+      'Thanh niên cao vọng Đảng, Việt Nam nghĩa đoàn, Hội Phục Việt, Đảng Thanh niên.',
+      'Đảng Cộng sản Pháp, Đảng Cộng sản Anh, Quốc tế Cộng sản.',
+      'Phong trào Tha-kin, Liên minh Thanh niên Ma-lay-a.'
+    ],
+    ans: 1
+  },
+  {
+    id: 43, lesson: 'bai5',
+    q: 'Trong những năm 1925 - 1926, tầng lớp tiểu tư sản Việt Nam đã sôi nổi tham gia các phong trào đấu tranh chính trị tiêu biểu nào?',
+    opts: [
+      'Tẩy chay tư sản Hoa kiều và chống độc quyền cảng Sài Gòn.',
+      'Đòi nhà cầm quyền Pháp thả Phan Bội Châu (1925), Nguyễn An Ninh (1926), tổ chức đám tang và lễ truy điệu Phan Châu Trinh (1926).',
+      'Mưu sát Toàn quyền Đông Dương Méc-lanh tại Sa Diện (Quảng Châu).',
+      'Bãi công đòi tăng lương, giảm giờ làm tại nhà máy xe lửa Trường Thi (Vinh).'
+    ],
+    ans: 1
+  },
+  {
+    id: 44, lesson: 'bai5',
+    q: 'Trong giai đoạn 1919 - 1925, các cuộc đấu tranh của giai cấp công nhân Việt Nam diễn ra với mục đích chủ yếu và hình thức gì?',
+    opts: [
+      'Mục đích chủ yếu là đòi tăng lương, giảm giờ làm; bên cạnh bỏ trốn, phá giao kèo đã bắt đầu sử dụng hình thức đấu tranh bãi công.',
+      'Mục đích chủ yếu là lật đổ ngay chính quyền thực dân Pháp bằng khởi nghĩa vũ trang toàn quốc.',
+      'Mục đích chủ yếu là đòi tự do thương mại ở cảng Sài Gòn và lập Đảng Lập hiến.',
+      'Mục đích chủ yếu là xuất bản sách báo tiếng Pháp như Chuông rạn, An Nam trẻ.'
+    ],
+    ans: 0
+  },
+  {
+    id: 45, lesson: 'bai5',
+    q: 'Tháng 8/1925, cuộc bãi công của công nhân Ba Son (Sài Gòn) nổ ra và giành thắng lợi đã đánh dấu bước ngoặt gì của phong trào công nhân Việt Nam?',
+    opts: [
+      'Đánh dấu bước chuyển của phong trào công nhân Việt Nam từ giai đoạn đấu tranh "tự phát" sang "tự giác".',
+      'Đánh dấu việc giai cấp tư sản Việt Nam giành được độc quyền xuất khẩu lúa gạo ở cảng Sài Gòn.',
+      'Đánh dấu sự kết thúc hoàn toàn ách thống trị của thực dân Pháp ở Đông Dương.',
+      'Đánh dấu sự ra đời của Đảng Lập hiến tại Sài Gòn.'
+    ],
+    ans: 0
+  },
+  {
+    id: 46, lesson: 'bai5',
+    q: 'Từ năm 1926 đến năm 1930, những cuộc đấu tranh lớn có tổ chức của giai cấp công nhân Việt Nam đã nổ ra ở những địa điểm tiêu biểu nào?',
+    opts: [
+      'Mỏ than Mạo Khê (Quảng Ninh), nhà máy xe lửa Trường Thi (Vinh), nhà máy sửa chữa ô tô A-vi-a (Hà Nội), đồn điền cao su Phú Riềng (Bình Phước).',
+      'Khách sạn Sa Diện (Quảng Châu), cảng Sài Gòn, Bắc Kinh và Tô-ki-ô.',
+      'Gia-va, Xu-ma-tơ-ra, Miến Điện và Mã Lai.',
+      'Noóc-măng-đi, Xta-lin-grát và Béc-lin.'
+    ],
+    ans: 0
+  },
+  {
+    id: 47, lesson: 'bai5',
+    q: 'Tháng 6/1925, Nguyễn Ái Quốc đã thành lập tổ chức cách mạng nào tại Quảng Châu (Trung Quốc) trên cơ sở lựa chọn các thanh niên ưu tú từ tổ chức Tâm tâm xã và từ trong nước sang?',
+    opts: [
+      'Tân Việt Cách mạng Đảng.',
+      'Việt Nam Quốc dân Đảng.',
+      'Hội Việt Nam Cách mạng Thanh niên.',
+      'Hội Phục Việt.'
+    ],
+    ans: 2
+  },
+  {
+    id: 48, lesson: 'bai5',
+    q: 'Tân Việt Cách mạng Đảng (tháng 7/1928) và Việt Nam Quốc dân Đảng (tháng 12/1927) lần lượt ra đời từ những tổ chức tiền thân / hạt nhân nào?',
+    opts: [
+      'Tân Việt Cách mạng Đảng có tiền thân là Hội Phục Việt; Việt Nam Quốc dân Đảng có cơ sở hạt nhân là Nam Đồng thư xã (Nguyễn Thái Học, Phó Đức Chính,...).',
+      'Tân Việt Cách mạng Đảng có tiền thân là Tâm tâm xã; Việt Nam Quốc dân Đảng có hạt nhân là Đảng Lập hiến.',
+      'Tân Việt Cách mạng Đảng có tiền thân là Nam Đồng thư xã; Việt Nam Quốc dân Đảng có hạt nhân là Hội Phục Việt.',
+      'Cả hai đảng đều có tiền thân từ Hội những người yêu nước Việt Nam tại Pháp của Phan Châu Trinh.'
+    ],
+    ans: 0
+  }
+];
+
+let autoShowGreen = false;
+let currentFilter = 'all';
+let selectedMap = {}; // { qId: chosenIndex }
+
+function renderMCQ() {
+  const listEl = document.getElementById('mcqList');
+  listEl.innerHTML = '';
+  const letters = ['A', 'B', 'C', 'D'];
+
+  const visibleQuestions = mcqData.filter(item =>
+    currentFilter === 'all' || item.lesson === currentFilter
+  );
+
+  visibleQuestions.forEach(item => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'q-item';
+    qDiv.setAttribute('data-lesson', item.lesson);
+
+    const chosen = selectedMap[item.id];
+
+    let optsHtml = '';
+    item.opts.forEach((optText, idx) => {
+      let stateClass = '';
+      if (autoShowGreen) {
+        if (idx === item.ans) stateClass = 'is-correct';
+      } else if (chosen !== undefined) {
+        if (idx === item.ans) stateClass = 'is-correct';
+        else if (idx === chosen && chosen !== item.ans) stateClass = 'is-wrong';
+      }
+
+      optsHtml += `
+        <button class="opt-btn ${stateClass}" onclick="chooseOption(${item.id}, ${idx})">
+          <div class="opt-left">
+            <span class="opt-letter">${letters[idx]}.</span>
+            <span>${optText}</span>
+          </div>
+          <span class="check-icon">✓ ĐÚNG</span>
+        </button>
+      `;
+    });
+
+    qDiv.innerHTML = `
+      <div class="q-question">
+        <span class="q-label">Câu ${item.id}:</span> ${item.q}
+      </div>
+      <div class="q-options">
+        ${optsHtml}
+      </div>
+    `;
+    listEl.appendChild(qDiv);
+  });
+
+  updateProgress();
+}
+
+function chooseOption(qId, optIdx) {
+  if (autoShowGreen) return;
+  selectedMap[qId] = optIdx;
+  renderMCQ();
+}
+
+function toggleStudyMode(isAuto) {
+  autoShowGreen = isAuto;
+  document.getElementById('btnAutoGreen').classList.toggle('active-green', isAuto);
+  document.getElementById('btnClickMode').classList.toggle('active-green', !isAuto);
+  renderMCQ();
+}
+
+function resetChoices() {
+  selectedMap = {};
+  autoShowGreen = false;
+  document.getElementById('btnAutoGreen').classList.remove('active-green');
+  document.getElementById('btnClickMode').classList.add('active-green');
+  renderMCQ();
+}
+
+function updateProgress() {
+  const count = Object.keys(selectedMap).length;
+  const pEl = document.getElementById('progressText');
+  if (autoShowGreen) {
+    pEl.textContent = 'Đang bật: Hiện sẵn 48/48 đáp án Xanh';
+  } else {
+    pEl.textContent = `Đã chọn: ${count}/${mcqData.length} câu`;
+  }
+}
+
+function filterByLesson(lesson, btn) {
+  currentFilter = lesson;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+
+  renderMCQ();
+
+  document.querySelectorAll('.essay-card').forEach(card => {
+    const cLesson = card.getAttribute('data-lesson');
+    if (lesson === 'all' || cLesson === lesson) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Khởi tạo ngay lập tức
+renderMCQ();
+</script>
+</body>
+</html>
